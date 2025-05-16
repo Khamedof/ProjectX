@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Devam Sayfası</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('Background2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .menu button {
+      display: block;
+      width: 200px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      text-align: left;
+      font-size: 16px;
+      margin: 8px 0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .menu button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateX(5px);
+      color: #ffcc00;
+    }
+
+    .icerik {
+      margin: 140px auto 40px auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 850px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .icerik h2 {
+      margin-bottom: 15px;
+      font-size: 28px;
+      color: #ffdd55;
+    }
+
+    .icerik p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menü -->
+  <div class="menu">
+    <button onclick="bolumGoster('hakkimda')">👤 Benim Hakkımda</button>
+    <button onclick="bolumGoster('tarih')">📜 Azerbaycan Tarihi</button>
+    <button onclick="bolumGoster('mutfak')">🍲 Azerbaycan Mutfağı</button>
+    <button onclick="bolumGoster('inciler')">💎 Azerbaycan'ın İncileri</button>
+    <button onclick="bolumGoster('eskisimdi')">⏳ Eskiden ve Şimdi</button>
+  </div>
+
+  <!-- İçerik Alanı -->
+  <div class="icerik" id="icerik">
+    <h2>Hoş Geldiniz</h2>
+    <p>Lütfen yukarıdaki menüden bir bölüm seçin.</p>
+  </div>
+
+  <script>
+    function bolumGoster(bolum) {
+      const icerik = document.getElementById('icerik');
+      switch (bolum) {
+        case 'hakkimda':
+          icerik.innerHTML = '<h2>Benim Hakkımda</h2><p>...</p>';
+          break;
+        case 'tarih':
+          icerik.innerHTML = '<h2>Azerbaycan Tarihi</h2><p>...</p>';
+          break;
+        case 'mutfak':
+          icerik.innerHTML = '<h2>Azerbaycan Mutfağı</h2><p>...</p>';
+          break;
+        case 'inciler':
+          icerik.innerHTML = '<h2>Azerbaycan\'ın İncileri</h2><p>...</p>';
+          break;
+        case 'eskisimdi':
+          icerik.innerHTML = '<h2>Azerbaycan: Eskiden ve Şimdi</h2><p>...</p>';
+          break;
+        default:
+          icerik.innerHTML = '<p>İçerik bulunamadı.</p>';
+      }
+    }
+  </script>
+
+</body>
+</html>

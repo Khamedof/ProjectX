@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project X</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('Background2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin-top: 5px;
+      font-size: 55px;
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
+      margin-top: 0px;
+      font-size: 25px;
+    }
+
+    /* Butonun alt ortada görünmesi için */
+    .alt-buton {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .alt-buton button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffffffcc;
+      color: #000;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+
+    .alt-buton button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hoş Geldiniz!</h1>
+  <h2>
+    <br>Bu platform aracılığıyla hem kendimi tanıtmayı hem de köklerimin ve kültürümün bir parçası olan
+    <br>Azerbaycan’ın zengin tarihini, kültürel mirasını ve doğal güzelliklerini sizlerle paylaşmayı amaçlıyorum.
+    <br>Azerbaycan, tarih boyunca farklı medeniyetlerin kesişim noktası olmuş; kültürel çeşitliliği, doğal 
+    <br>zenginlikleri ve misafirperver insanlarıyla bölgesinde benzersiz bir konuma sahiptir.
+    <br>Burada, ülkemizin geçmişten günümüze uzanan derin köklerini, geleneksel ve çağdaş yaşam biçimlerini 
+    <br>keşfetme fırsatı bulacaksınız. Amacım, ziyaretçilerime Azerbaycan’ı daha yakından tanıtmak ve bu eşsiz
+    <br>mirasın dünya ile paylaşılmasına katkıda bulunmaktır.
+    <br>Sizleri, bu bilgi ve kültür yolculuğunda keyifli ve verimli bir deneyim yaşamaya davet ediyorum.
+  </h2>
+
+  <!-- Alt ortadaki buton -->
+  <div class="alt-buton">
+    <button onclick="yeniSekmeAc()">Devam Et</button>
+  </div>
+
+  <script>
+    function yeniSekmeAc() {
+      window.open("devam.html", "_blank");
+    }
+  </script>
+  
+  <script src="js/core.js"></script>
+</body>
+</html>
