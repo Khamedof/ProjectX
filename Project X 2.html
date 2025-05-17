@@ -15,23 +15,32 @@
       background-position: center;
       background-repeat: no-repeat;
       font-family: Arial, sans-serif;
+      color: white;
     }
 
     h1 {
-      color: white;
       text-align: center;
-      margin-top: 5px;
+      margin-top: 30px;
       font-size: 55px;
+      z-index: 2;
     }
 
-    h2 {
-      color: white;
+    .icerik-kutu {
+      background-color: rgba(0, 0, 0, 0.5); /* yarı şeffaf siyah */
+      padding: 30px 40px;
+      border-radius: 15px;
+      max-width: 900px;
+      margin: 40px auto;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .icerik-kutu h2 {
+      font-size: 24px;
+      line-height: 1.6;
       text-align: center;
-      margin-top: 0px;
-      font-size: 25px;
+      color: #f1f1f1;
     }
 
-    /* Butonun alt ortada görünmesi için */
     .alt-buton {
       position: fixed;
       bottom: 30px;
@@ -58,16 +67,19 @@
 </head>
 <body>
   <h1>Hoş Geldiniz!</h1>
-  <h2>
-    <br>Bu platform aracılığıyla hem kendimi tanıtmayı hem de köklerimin ve kültürümün bir parçası olan
-    <br>Azerbaycan’ın zengin tarihini, kültürel mirasını ve doğal güzelliklerini sizlerle paylaşmayı amaçlıyorum.
-    <br>Azerbaycan, tarih boyunca farklı medeniyetlerin kesişim noktası olmuş; kültürel çeşitliliği, doğal 
-    <br>zenginlikleri ve misafirperver insanlarıyla bölgesinde benzersiz bir konuma sahiptir.
-    <br>Burada, ülkemizin geçmişten günümüze uzanan derin köklerini, geleneksel ve çağdaş yaşam biçimlerini 
-    <br>keşfetme fırsatı bulacaksınız. Amacım, ziyaretçilerime Azerbaycan’ı daha yakından tanıtmak ve bu eşsiz
-    <br>mirasın dünya ile paylaşılmasına katkıda bulunmaktır.
-    <br>Sizleri, bu bilgi ve kültür yolculuğunda keyifli ve verimli bir deneyim yaşamaya davet ediyorum.
-  </h2>
+
+  <div class="icerik-kutu">
+    <h2>
+      Bu platform aracılığıyla hem kendimi tanıtmayı hem de köklerimin ve kültürümün bir parçası olan
+      <br>Azerbaycan’ın zengin tarihini, kültürel mirasını ve doğal güzelliklerini sizlerle paylaşmayı amaçlıyorum.
+      Azerbaycan, tarih boyunca farklı medeniyetlerin kesişim noktası olmuş; kültürel çeşitliliği, doğal 
+      zenginlikleri ve misafirperver insanlarıyla bölgesinde benzersiz bir konuma sahiptir.
+      <br>Burada, ülkemizin geçmişten günümüze uzanan derin köklerini, geleneksel ve çağdaş yaşam biçimlerini 
+      keşfetme fırsatı bulacaksınız. Amacım, ziyaretçilerime Azerbaycan’ı daha yakından tanıtmak ve bu eşsiz
+      mirasın dünya ile paylaşılmasına katkıda bulunmaktır.
+      <br>Sizleri, bu bilgi ve kültür yolculuğunda keyifli ve verimli bir deneyim yaşamaya davet ediyorum.
+    </h2>
+  </div>
 
   <!-- Alt ortadaki buton -->
   <div class="alt-buton">

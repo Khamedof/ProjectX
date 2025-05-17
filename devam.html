@@ -2,7 +2,8 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Devam Sayfası</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azerbaycan Tanıtım Sitesi</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -11,112 +12,178 @@
       box-sizing: border-box;
     }
 
-    body {
+    body, html {
+      height: 100%;
       font-family: 'Poppins', sans-serif;
-      background-image: url('Background2.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      transition: background-image 0.5s ease-in-out;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 28px;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger div {
+      background-color: white;
+      height: 4px;
+      margin: 5px 0;
+      transition: 0.4s;
+      border-radius: 2px;
     }
 
     .menu {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 60px 20px;
+      box-shadow: 2px 0 12px rgba(0, 0, 0, 0.6);
+      transition: left 0.4s ease;
+      z-index: 1000;
+    }
+
+    .menu.open {
+      left: 0;
     }
 
     .menu button {
       display: block;
-      width: 200px;
-      background: transparent;
+      background: none;
       border: none;
       color: #fff;
+      font-size: 18px;
+      margin: 15px 0;
       text-align: left;
-      font-size: 16px;
-      margin: 8px 0;
-      padding: 8px 12px;
-      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
+      transition: color 0.3s;
     }
 
     .menu button:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: translateX(5px);
       color: #ffcc00;
     }
 
     .icerik {
-      margin: 140px auto 40px auto;
-      padding: 30px;
-      width: 80%;
+      margin: 100px auto;
       max-width: 850px;
       background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
       border-radius: 16px;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
       text-align: center;
-      transition: all 0.3s ease-in-out;
     }
 
     .icerik h2 {
       margin-bottom: 15px;
-      font-size: 28px;
+      font-size: 26px;
       color: #ffdd55;
     }
 
     .icerik p {
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.6;
+    }
+
+    a {
+      color: #ffdd55;
+      text-decoration: none;
     }
   </style>
 </head>
-<body>
+<body style="background-image: url('Background2.png');" id="body">
 
-  <!-- Menü -->
-  <div class="menu">
-    <button onclick="bolumGoster('hakkimda')">👤 Benim Hakkımda</button>
-    <button onclick="bolumGoster('tarih')">📜 Azerbaycan Tarihi</button>
-    <button onclick="bolumGoster('mutfak')">🍲 Azerbaycan Mutfağı</button>
-    <button onclick="bolumGoster('inciler')">💎 Azerbaycan'ın İncileri</button>
-    <button onclick="bolumGoster('eskisimdi')">⏳ Eskiden ve Şimdi</button>
+  <header id="sayfaBasligi">Azerbaycan Tanıtım Sitesi</header>
+
+  <div class="hamburger" onclick="menuToggle()">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 
-  <!-- İçerik Alanı -->
+  <div class="menu" id="menu">
+    <button onclick="bolumGoster('hakkimda')">Benim Hakkımda</button>
+    <button onclick="bolumGoster('tarih')">Azerbaycan Tarihi</button>
+    <button onclick="bolumGoster('mutfak')">Azerbaycan Mutfağı</button>
+    <button onclick="bolumGoster('inciler')">Azerbaycan'ın İncileri</button>
+    <button onclick="bolumGoster('eskisimdi')">Eskiden ve Şimdi</button>
+    <button onclick="bolumGoster('iletisim')">İletişim</button>
+  </div>
+
   <div class="icerik" id="icerik">
     <h2>Hoş Geldiniz</h2>
-    <p>Lütfen yukarıdaki menüden bir bölüm seçin.</p>
+    <p>Lütfen sol üst köşedeki menüden bir bölüm seçin.</p>
   </div>
 
   <script>
+    function menuToggle() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('open');
+    }
+
     function bolumGoster(bolum) {
       const icerik = document.getElementById('icerik');
+      const baslik = document.getElementById('sayfaBasligi');
+      const body = document.getElementById('body');
+
+      let arkaPlan = 'Background2.png';
+
       switch (bolum) {
         case 'hakkimda':
+          baslik.textContent = "Benim Hakkımda";
           icerik.innerHTML = '<h2>Benim Hakkımda</h2><p>...</p>';
+          arkaPlan = 'background-hakkimda.png';
           break;
         case 'tarih':
+          baslik.textContent = "Azerbaycan Tarihi";
           icerik.innerHTML = '<h2>Azerbaycan Tarihi</h2><p>...</p>';
+          arkaPlan = 'background-tarih.jpg';
           break;
         case 'mutfak':
+          baslik.textContent = "Azerbaycan Mutfağı";
           icerik.innerHTML = '<h2>Azerbaycan Mutfağı</h2><p>...</p>';
+          arkaPlan = 'background-mutfak.jpg';
           break;
         case 'inciler':
+          baslik.textContent = "Azerbaycan'ın İncileri";
           icerik.innerHTML = '<h2>Azerbaycan\'ın İncileri</h2><p>...</p>';
+          arkaPlan = 'background-inciler.jpg';
           break;
         case 'eskisimdi':
-          icerik.innerHTML = '<h2>Azerbaycan: Eskiden ve Şimdi</h2><p>...</p>';
+          baslik.textContent = "Eskiden ve Şimdi";
+          icerik.innerHTML = '<h2>Eskiden ve Şimdi</h2><p>...</p>';
+          arkaPlan = 'background-eskisimdi.jpg';
+          break;
+        case 'iletisim':
+          baslik.textContent = "İletişim";
+          icerik.innerHTML = '<h2>İletişim</h2><p>Bana ulaşmak için e-posta gönderin: <a href="mailto:ornek@eposta.com">ornek@eposta.com</a></p>';
+          arkaPlan = 'Background2.png';
           break;
         default:
-          icerik.innerHTML = '<p>İçerik bulunamadı.</p>';
+          baslik.textContent = "Welcome Guest!";
+          icerik.innerHTML = '<p>Bölüm bulunamadı.</p>';
       }
+
+      body.style.backgroundImage = `url('${arkaPlan}')`;
+      document.getElementById('menu').classList.remove('open');
     }
   </script>
 
