@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Azerbaycan Tanıtım Sitesi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
     * {
       margin: 0;
@@ -12,23 +15,26 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html,
+    body {
       height: 100%;
-      font-family: 'Poppins', sans-serif;
-      background-size: cover;
+      font-family: "Poppins", sans-serif;
+      background-size: 110% auto; /* Arka planı biraz büyüttük */
       background-position: center;
       background-repeat: no-repeat;
       color: white;
-      transition: background-image 0.5s ease-in-out;
+      transition: background-image 1s ease-in-out;
+      overflow-x: hidden;
     }
 
     header {
       text-align: center;
-      padding: 20px 0;
-      font-size: 28px;
+      padding: 20px;
+      font-size: 30px;
       font-weight: bold;
       background: rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      z-index: 100;
     }
 
     .hamburger {
@@ -45,8 +51,8 @@
       background-color: white;
       height: 4px;
       margin: 5px 0;
-      transition: 0.4s;
       border-radius: 2px;
+      transition: all 0.4s;
     }
 
     .menu {
@@ -57,8 +63,8 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.9);
       padding: 60px 20px;
-      box-shadow: 2px 0 12px rgba(0, 0, 0, 0.6);
-      transition: left 0.4s ease;
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.6);
+      transition: left 0.5s ease;
       z-index: 1000;
     }
 
@@ -75,42 +81,105 @@
       margin: 15px 0;
       text-align: left;
       cursor: pointer;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
     }
 
     .menu button:hover {
       color: #ffcc00;
+      transform: translateX(5px);
     }
 
     .icerik {
       margin: 100px auto;
-      max-width: 850px;
+      max-width: 1500px;
       background-color: rgba(0, 0, 0, 0.6);
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
       text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .icerik h2 {
       margin-bottom: 15px;
-      font-size: 26px;
+      font-size: 28px;
       color: #ffdd55;
     }
 
     .icerik p {
       font-size: 17px;
-      line-height: 1.6;
+      line-height: 1.7;
+      text-align: center;
     }
 
     a {
       color: #ffdd55;
       text-decoration: none;
     }
+    .mutfak-galerisi {
+  max-width: 850px;
+  margin: 30px auto 0 auto;
+  padding: 0 15px;
+}
+
+.yemek-item {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease;
+}
+
+.yemek-item:hover {
+  transform: scale(1.03);
+}
+
+.yemek-item img {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.yemek-bilgi {
+  color: #ffdd55;
+  margin-left: 20px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.yemek-item.sol {
+  flex-direction: row;
+}
+
+.yemek-item.sag {
+  flex-direction: row-reverse; 
+  text-align: right;
+}
+
+.yemek-item.sag .yemek-bilgi {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
   </style>
 </head>
 <body style="background-image: url('Background2.png');" id="body">
-
   <header id="sayfaBasligi">Azerbaycan Tanıtım Sitesi</header>
 
   <div class="hamburger" onclick="menuToggle()">
@@ -120,12 +189,13 @@
   </div>
 
   <div class="menu" id="menu">
-    <button onclick="bolumGoster('hakkimda')">Benim Hakkımda</button>
-    <button onclick="bolumGoster('tarih')">Azerbaycan Tarihi</button>
-    <button onclick="bolumGoster('mutfak')">Azerbaycan Mutfağı</button>
-    <button onclick="bolumGoster('inciler')">Azerbaycan'ın İncileri</button>
-    <button onclick="bolumGoster('eskisimdi')">Eskiden ve Şimdi</button>
-    <button onclick="bolumGoster('iletisim')">İletişim</button>
+    <button onclick="bolumGoster('hakkimda')">👤 Benim Hakkımda</button>
+    <button onclick="bolumGoster('tarih')">📜 Azerbaycan Tarihi</button>
+    <button onclick="bolumGoster('dogasi')">🌿 Azerbaycan Doğası</button>
+    <button onclick="bolumGoster('mutfak')">🍲 Azerbaycan Mutfağı</button>
+    <button onclick="bolumGoster('inciler')">💎 Azerbaycan'ın İncileri</button>
+    <button onclick="bolumGoster('eskisimdi')">⏳ Eskiden ve Şimdi</button>
+    <button onclick="bolumGoster('iletisim')">📧 İletişim</button>
   </div>
 
   <div class="icerik" id="icerik">
@@ -135,57 +205,181 @@
 
   <script>
     function menuToggle() {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('open');
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("open");
     }
 
     function bolumGoster(bolum) {
-      const icerik = document.getElementById('icerik');
-      const baslik = document.getElementById('sayfaBasligi');
-      const body = document.getElementById('body');
+  const icerik = document.getElementById("icerik");
+  const baslik = document.getElementById("sayfaBasligi");
+  const body = document.getElementById("body");
+  let arkaPlan = "Background2.png";
 
-      let arkaPlan = 'Background2.png';
+  let icerikHTML = "";
+  let baslikText = "";
 
-      switch (bolum) {
-        case 'hakkimda':
-          baslik.textContent = "Benim Hakkımda";
-          icerik.innerHTML = '<h2>Benim Hakkımda</h2><p>...</p>';
-          arkaPlan = 'background-hakkimda.png';
-          break;
-        case 'tarih':
-          baslik.textContent = "Azerbaycan Tarihi";
-          icerik.innerHTML = '<h2>Azerbaycan Tarihi</h2><p>...</p>';
-          arkaPlan = 'background-tarih.jpg';
-          break;
-        case 'mutfak':
-          baslik.textContent = "Azerbaycan Mutfağı";
-          icerik.innerHTML = '<h2>Azerbaycan Mutfağı</h2><p>...</p>';
-          arkaPlan = 'background-mutfak.jpg';
-          break;
-        case 'inciler':
-          baslik.textContent = "Azerbaycan'ın İncileri";
-          icerik.innerHTML = '<h2>Azerbaycan\'ın İncileri</h2><p>...</p>';
-          arkaPlan = 'background-inciler.jpg';
-          break;
-        case 'eskisimdi':
-          baslik.textContent = "Eskiden ve Şimdi";
-          icerik.innerHTML = '<h2>Eskiden ve Şimdi</h2><p>...</p>';
-          arkaPlan = 'background-eskisimdi.jpg';
-          break;
-        case 'iletisim':
-          baslik.textContent = "İletişim";
-          icerik.innerHTML = '<h2>İletişim</h2><p>Bana ulaşmak için e-posta gönderin: <a href="mailto:ornek@eposta.com">ornek@eposta.com</a></p>';
-          arkaPlan = 'Background2.png';
+  switch (bolum) {
+    case "mutfak":
+      baslikText = "🍲 Azerbaycan Mutfağı";
+      arkaPlan = "background-mutfak.jpg";
+      icerikHTML = `
+        <h2>Azerbaycan Mutfağı</h2>
+        <p>
+          Azerbaycan mutfağı, zengin tarihî kökleri ve çeşitliliğiyle Orta Asya, Kafkaslar ve İran mutfaklarının kesişim 
+          noktasında benzersiz bir lezzet kültürünü yansıtır. Etimolojik olarak “mutfak” kelimesi Farsça kökenli olup, 
+          “pişirme yeri” anlamına gelirken, Azerbaycan mutfağı da tarih boyunca hem yerel hem de bölgesel etkilerle 
+          şekillenmiştir. Bu mutfak, özellikle tarih öncesi çağlardan beri Azerbaycan topraklarında var olan farklı 
+          halkların, göçlerin, ticaret yollarının ve kültürel alışverişlerin etkisiyle zenginleşmiştir.
+        </p>
+        <p>
+          Azerbaycan mutfağının temel yapıtaşlarından biri, bölgenin verimli topraklarında yetişen taze sebzeler,
+          baharatlar ve et ürünleridir. Özellikle kuzu eti, tavuk, balık ve sebze çeşitleri Azerbaycan yemeklerinde 
+          başroldedir. Geleneksel yemeklerde genellikle doğal baharatlar ve otlar kullanılır; kimyon, sumak, kişniş ve nane 
+          bunlardan sadece birkaçıdır. Bu baharatlar, yemeğe özgün ve dengeli bir aroma katarken sağlığa da faydalıdır.
+          Tarih boyunca Azerbaycan mutfağı, özellikle İpek Yolu’nun geçtiği bir coğrafyada yer alması sebebiyle pek çok farklı
+          kültürle etkileşimde bulunmuş ve bu da yemek çeşitliliğine yansımıştır. Orta Çağ’dan itibaren hem saray mutfağı hem de
+          halk mutfağı şeklinde gelişen bu zengin kültür, bugün hem günlük yaşamda hem de özel kutlamalarda önemli bir yer tutar.
+        </p>
+        <p>
+          Azerbaycan mutfağının en meşhur yemeklerinden biri olan “Plov” (pilav), bölgenin sembolü gibidir. Farklı türleri olan 
+          plov, genellikle baharatlı pirinçle kuzu eti, kuru meyve ve sebzelerin uyumlu birleşimiyle yapılır. Her bölgenin 
+          kendine has plov tarifi bulunur ve bu yemek, misafirperverliğin ve kutlamaların ayrılmaz parçasıdır. Plovun yanı 
+          sıra “Dolma” da, üzüm yaprağı veya sebzelerin içine doldurulan et ve pirinç karışımıyla bilinen klasik bir yemektir.
+          Azerbaycan’da sebze ve et uyumu çok önemlidir. Örneğin “Kebab” çeşitleri, genellikle közde pişirilir ve yanında yoğurt 
+          veya yeşilliklerle servis edilir. “Düşbərə” ise küçük hamur parçalarının et suyunda pişirildiği, mantıya benzeyen 
+          geleneksel bir çorbadır. “Qutab” ise ince açılmış hamurun içine ot, kıyma ya da peynir konularak sac üzerinde pişirilen
+          nefis bir lezzettir.
+        </p>
+        <p>
+          Geçmişte, özellikle Sovyetler Birliği döneminde Azerbaycan mutfağı bazı modernleşme ve batılılaşma etkileri görmüş olsa da,
+          köklü geleneksel tarifler nesilden nesile aktarılmıştır. 90’lı yıllardan sonra Azerbaycan mutfağı, yeniden uluslararası 
+          sahnede ilgi görmeye başlamış ve dünya mutfağına özgün tatlarını sunmaya başlamıştır. Azerbaycan mutfağı sadece yemeklerle 
+          değil, içecek kültürüyle de dikkat çeker. “Çay” günlük yaşamda en çok tüketilen içecektir ve özel bakır çaydanlıklarda 
+          demlenerek, genellikle şeker veya reçelle servis edilir. Ayrıca, “Şirvan şərbəti” gibi meyveli ve bitkisel şerbetler de meşhurdur.
+        </p>
+        <p>
+          Sonuç olarak, Azerbaycan mutfağı hem coğrafi hem de kültürel çeşitliliğin benzersiz bir yansımasıdır. 
+          Her yemeği, tarihî bir yolculuğun, zengin toprakların ve içten misafirperverliğin hikayesini anlatır. 
+          Geleneksel tarifler günümüzde hem evlerde hem de restoranlarda yaşatılmakta ve dünya gastronomi 
+          dünyasında kendine özgü bir yer edinmektedir.
+        </p>
+        <div class="mutfak-galerisi">
+          <div class="yemek-item sol">
+            <img src="yemek1.jpg" alt="Yemek 1" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 1</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+          <div class="yemek-item sag">
+            <img src="yemek2.jpg" alt="Yemek 2" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 2</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+          <div class="yemek-item sol">
+            <img src="yemek3.jpg" alt="Yemek 3" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 3</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+          <div class="yemek-item sag">
+            <img src="yemek4.jpg" alt="Yemek 4" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 4</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+          <div class="yemek-item sol">
+            <img src="yemek5.jpg" alt="Yemek 5" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 5</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+          <div class="yemek-item sag">
+            <img src="yemek6.jpg" alt="Yemek 6" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 6</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+          <div class="yemek-item sol">
+            <img src="yemek7.jpg" alt="Yemek 7" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 7</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+          <div class="yemek-item sag">
+            <img src="yemek8.jpg" alt="Yemek 8" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 8</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+          <div class="yemek-item sol">
+            <img src="yemek9.jpg" alt="Yemek 9" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 9</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+          <div class="yemek-item sag">
+            <img src="yemek10.jpg" alt="Yemek 10" />
+            <div class="yemek-bilgi">
+              <h3>Yemek Adı 10</h3>
+              <p>Kısa açıklama burada yer alacak.</p>
+            </div>
+          </div>
+        </div>
+      `;
+      break;
+
+    case "hakkimda":
+      baslikText = "👤 Benim Hakkımda";
+      arkaPlan = "background-hakkimda.png";
+      icerikHTML = "<h2>Benim Hakkımda</h2><p>Buraya kendinizle ilgili bilgileri yazabilirsiniz.</p>";
+      break;
+    case "tarih":
+      baslikText = "📜 Azerbaycan Tarihi";
+      arkaPlan = "background-tarih.jpg";
+      icerikHTML = "<h2>Azerbaycan Tarihi</h2><p>Buraya Azerbaycan tarihi hakkında bilgileri yazabilirsiniz.</p>";
+      break;
+    case "dogasi":
+      baslikText = "🌿 Azerbaycan Doğası";
+      arkaPlan = "background-dogasi.jpg";
+      icerikHTML = "<h2>Azerbaycan Doğası</h2><p>Buraya Azerbaycan'ın doğal güzellikleri hakkında bilgileri yazabilirsiniz.</p>";
+      break;
+    case "inciler":
+      baslikText = "💎 Azerbaycan'ın İncileri";
+      arkaPlan = "background-inciler.jpg";
+      icerikHTML = "<h2>Azerbaycan'ın İncileri</h2><p>Buraya Azerbaycan'ın önemli yerleri ve kültürel zenginlikleri hakkında bilgileri yazabilirsiniz.</p>";
+      break;
+    case "eskisimdi":
+      baslikText = "⏳ Eskiden ve Şimdi";
+      arkaPlan = "background-eskisimdi.jpg";
+      icerikHTML = "<h2>Eskiden ve Şimdi</h2><p>Buraya Azerbaycan'ın geçmişten günümüze değişim</p>";
+      break;
+        case "iletisim":
+          baslikText = "📧 İletişim";
+          arkaPlan = "Background2.png";
+          icerikHTML = `<h2>İletişim</h2>
+                        <p>Bana ulaşmak için e-posta gönderin veya sosyal medya hesaplarımı ziyaret edin.</p>`;
           break;
         default:
-          baslik.textContent = "Welcome Guest!";
-          icerik.innerHTML = '<p>Bölüm bulunamadı.</p>';
+          baslikText = "Azerbaycan Tanıtım Sitesi";
+          icerikHTML =
+            '<h2>Hoş Geldiniz</h2><p>Lütfen sol üst köşedeki menüden bir bölüm seçin.</p>';
       }
 
+      icerik.innerHTML = icerikHTML;
+      baslik.textContent = baslikText;
       body.style.backgroundImage = `url('${arkaPlan}')`;
-      document.getElementById('menu').classList.remove('open');
+      document.getElementById("menu").classList.remove("open");
     }
   </script>
-
 </body>
 </html>
