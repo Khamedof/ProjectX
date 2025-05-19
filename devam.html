@@ -8,6 +8,13 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
     rel="stylesheet"
   />
+  
+
+
+
+
+
+
   <style>
     * {
       margin: 0;
@@ -149,8 +156,9 @@
 }
 
 .yemek-item img {
-  width: 220px;
-  height: 150px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
@@ -176,6 +184,35 @@
   margin-left: 0;
   margin-right: 20px;
 }
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #222; /* Siyah kutu efekti */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #c4a64f; /* Altın sarısı başlık */
+  }
+
+  p {
+    line-height: 1.7;
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 25px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(196,166,79,0.5);
+  }
 
   </style>
 </head>
@@ -203,6 +240,9 @@
     <p>Lütfen sol üst köşedeki menüden bir bölüm seçin.</p>
   </div>
 
+  
+
+  
   <script>
     function menuToggle() {
       const menu = document.getElementById("menu");
@@ -224,6 +264,7 @@
       arkaPlan = "background-mutfak.jpg";
       icerikHTML = `
         <h2>Azerbaycan Mutfağı</h2>
+       
         <p>
           Azerbaycan mutfağı, zengin tarihî kökleri ve çeşitliliğiyle Orta Asya, Kafkaslar ve İran mutfaklarının kesişim 
           noktasında benzersiz bir lezzet kültürünü yansıtır. Etimolojik olarak “mutfak” kelimesi Farsça kökenli olup, 
@@ -263,78 +304,118 @@
           Geleneksel tarifler günümüzde hem evlerde hem de restoranlarda yaşatılmakta ve dünya gastronomi 
           dünyasında kendine özgü bir yer edinmektedir.
         </p>
+     
         <div class="mutfak-galerisi">
-          <div class="yemek-item sol">
+           
+           <div class="yemek-item sol">
             <img src="yemek1.jpg" alt="Yemek 1" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 1</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Şah Plov</h3>
+              <p>Azerbaycan mutfağının kalbidir. Safranla renklendirilmiş ve
+                 tereyağında pişirilmiş pirinç, altında kuzu eti, kuru meyve 
+                 (erik, kayısı), kestane ve baharatlarla servis edilir. Her 
+                 evin ve bölgenin kendi plov tarifi vardır. Genellikle 
+                 düğünlerde ve özel davetlerde yapılır.</p>
             </div>
-          </div>
+        </div>
+        
+         
           <div class="yemek-item sag">
             <img src="yemek2.jpg" alt="Yemek 2" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 2</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Dolma</h3>
+              <p>Üzüm yapraklarına sarılan baharatlı kıyma ve pirinç karışımı ile 
+                yapılır. Sıklıkla sarımsaklı yoğurtla birlikte servis edilir. 
+                Ayrıca biber, domates, patlıcan gibi sebzeler de dolma olarak
+                 hazırlanır. Azerbaycan'da "yarpag dolması" oldukça meşhurdur.</p>
             </div>
           </div>
           <div class="yemek-item sol">
             <img src="yemek3.jpg" alt="Yemek 3" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 3</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Düşbere</h3>
+              <p>Minik mantılarla yapılan geleneksel bir çorbadır. Hamurun içine
+                 kıyma koyularak küçük küçük hazırlanır. Et suyunda pişirilir 
+                 ve genellikle sarımsaklı sirke ile birlikte servis edilir. 
+                 Azerbaycan’da düşberenin mantıları ne kadar küçükse,
+                 o kadar usta bir aşçı kabul edilirsiniz!</p>
             </div>
           </div>
           <div class="yemek-item sag">
             <img src="yemek4.jpg" alt="Yemek 4" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 4</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Kebap ve Şişlik</h3>
+              <p>Odun kömüründe pişirilen et (kuzu, tavuk, balık) şişleri. Yanında 
+                közlenmiş domates-biber, soğan halkaları ve nar ekşisiyle servis 
+                edilir. Bahçelerde yapılan pikniklerin vazgeçilmezi, aynı zamanda 
+                geleneksel misafir ağırlama yemeğidir.</p>
             </div>
           </div>
           <div class="yemek-item sol">
             <img src="yemek5.jpg" alt="Yemek 5" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 5</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Kükü</h3>
+              <p>Ispanak, kişniş, dereotu gibi yeşilliklerle çırpılmış yumurtadan
+                 yapılan bir tür omlettir. Fırında ya da tavada pişirilir. 
+                 Soğuk veya sıcak olarak yenebilir. Hem sağlıklı hem de hafif 
+                 olduğu için özellikle yaz aylarında tercih edilir.</p>
             </div>
           </div>
           <div class="yemek-item sag">
             <img src="yemek6.jpg" alt="Yemek 6" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 6</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Piti</h3>
+              <p>Şeki bölgesine özgü olan bu yemek, küçük seramik güveçlerde hazırlanır. 
+                İçinde kuzu eti, nohut, kestane, patates, domates ve safran bulunur.
+                Yavaş ateşte saatlerce pişirilir. Yemeğin suyu ve katısı ayrı ayrı
+                yenir – özel bir servis şekli vardır.</p>
             </div>
           </div>
           <div class="yemek-item sol">
             <img src="yemek7.jpg" alt="Yemek 7" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 7</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Bozbaş</h3>
+              <p>Kuzu eti, nohut, patates ve soğanla hazırlanan yoğun kıvamlı bir 
+                et yemeğidir. Bazen erik veya domates de eklenir. Özellikle kış 
+                aylarında sıkça tüketilir. Besleyici ve doyurucudur. Hem çorba 
+                hem ana yemek olarak kabul edilir.</p>
             </div>
           </div>
           <div class="yemek-item sag">
             <img src="yemek8.jpg" alt="Yemek 8" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 8</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Gutab</h3>
+              <p>İnce açılmış hamurun içine kıyma, ot (ispanak, kişniş) ya da 
+                 peynir konularak yarım ay şeklinde kapatılır ve sacda pişirilir. 
+                 Üzerine tereyağı sürülerek sıcak yenir. Çayla birlikte ya da ayranla 
+                 tüketilir. Genellikle sokak lezzeti olarak da satılır.</p>
             </div>
           </div>
           <div class="yemek-item sol">
             <img src="yemek9.jpg" alt="Yemek 9" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 9</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Xəngəl</h3>
+              <p>Azerbaycan mutfağının sevilen yemeklerinden biridir. İnce açılmış 
+                hamur parçaları haşlanarak hazırlanır ve genellikle kuzu eti, 
+                kızarmış soğan ve sarımsaklı yoğurtla birlikte servis edilir.
+                 Etli ve etsiz (yalnızca yoğurtlu) çeşitleri bulunur. Doyurucu 
+                 ve ev yapımı lezzetiyle özellikle soğuk aylarda tercih edilir.</p>
             </div>
           </div>
           <div class="yemek-item sag">
             <img src="yemek10.jpg" alt="Yemek 10" />
             <div class="yemek-bilgi">
-              <h3>Yemek Adı 10</h3>
-              <p>Kısa açıklama burada yer alacak.</p>
+              <h3>Şekerbura ve Paxlava</h3>
+              <p>Şekerbura: Ceviz, fındık veya badem içiyle doldurulan, hilal
+                 şeklinde bir hamur tatlısı. Üzerine özel desenler verilir.
+                 
+                 Paxlava: Kat kat yufka arasına ceviz içi konur, bal veya
+                  şerbetle tatlandırılır. Genellikle Nevruz Bayramı’nda yapılır. 
+                  Üstü baklava dilimi şeklinde kesilerek fındıkla süslenir</p>
             </div>
           </div>
         </div>
+  
       `;
       break;
 
@@ -351,8 +432,65 @@
     case "dogasi":
       baslikText = "🌿 Azerbaycan Doğası";
       arkaPlan = "background-dogasi.jpg";
-      icerikHTML = "<h2>Azerbaycan Doğası</h2><p>Buraya Azerbaycan'ın doğal güzellikleri hakkında bilgileri yazabilirsiniz.</p>";
+      icerikHTML = `"<h2>Azerbaycan Doğası</h2>
+      <div class="container">
+         <p>Azerbaycan, Kafkasların incisi olarak doğanın tüm zenginliklerini barındıran 
+          eşsiz bir coğrafyaya sahiptir. Kura Nehri'nin bereketli vadilerinden, Hazar 
+          Denizi'nin mavi kıyılarına; yüksek dağların beyaz zirvelerinden geniş ormanlara
+           kadar pek çok farklı ekosistemi içinde barındırır. Bu çeşitlilik, Azerbaycan'ın
+           hem doğal yaşam hem de turizm açısından önemli bir merkez olmasını sağlar.</p>
+    
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Azerbaijan_nature.jpg" // alt="Azerbaycan Doğası 1" />
+    
+          <p>Ülkenin kuzeydoğusunda, yüksek dağlar ve yaylalar bulunur. Büyük Kafkas Dağları'nın 
+            güney yamaçları, yıl boyunca karla kaplı zirveleriyle dikkat çeker. Bu dağlar,
+            trekking ve kış sporları için ideal bir ortam sunarken, aynı zamanda birçok endemik
+            bitki ve hayvan türüne ev sahipliği yapar. Dağların eteklerinde ise zengin orman 
+            alanları yer alır; burada farklı ağaç türleri ve çeşitli yaban hayatı gözlemlenebilir.</p>
+
+          <p>Azerbaycan'ın doğasında önemli bir yer tutan diğer bir bölge ise Talış Dağları’dır.
+          Bu bölgede subtropikal iklim özellikleri hakimdir ve nemli ormanlar ülkeye özgü bitki
+          çeşitliliğini oluşturur. Burada yetişen bitkiler hem tıbbi hem de ekonomik açıdan
+           değerlidir. Ayrıca, Talış Dağları’nda birçok endemik hayvan türü bulunur ve bu alan 
+           doğa koruma açısından büyük önem taşır.</p>
+     
+           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Talysh_Mountains_-_panoramio.jpg/800px-Talysh_Mountains_-_panoramio.jpg" alt="Talış Dağları" />
+    
+          <p>Ülkenin güneyinde Hazar Denizi’nin kıyıları uzanır. Burası sadece deniz ekosistemi açısından değil,
+          aynı zamanda zengin tuz ve mineral yataklarıyla da dikkat çeker. Hazar Denizi, birçok göçmen kuş
+           türünün konaklama alanıdır ve kuş gözlemciliği için popüler bir noktadır. Ayrıca, deniz 
+           kıyısında bulunan mangrov ormanları ve sulak alanlar, biyoçeşitliliği artıran önemli 
+           habitatlardır.</p>
+
+          <p>Azerbaycan’da çok sayıda nehir, göl ve şelale vardır. Kura Nehri, ülkenin en büyük
+           nehridir ve tarım açısından hayati öneme sahiptir. Nehrin çevresindeki vadiler, verimli 
+           toprakları ve ılıman iklimi ile tarımın merkezi konumundadır. Bu alanlarda meyve 
+           bahçeleri, sebze tarlaları ve bağlar yaygındır.</p>
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kura_River_in_Azerbaijan.jpg/800px-Kura_River_in_Azerbaijan.jpg" alt="Kura Nehri" />
+    
+          <p>Doğa yürüyüşleri ve kampçılık için tercih edilen bölgelerden biri de Gobustan Milli 
+            Parkı’dır. Burası hem tarih hem doğa açısından zengindir; milyonlarca yıl önceki kaya 
+            resimleri ve fosillerin yanı sıra, benzersiz doğa manzaralarına sahiptir. Gobustan’ın 
+            volkanik çamur bacaları da jeolojik açıdan ilgi çeken doğal oluşumlardır.</p>
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Gobustan_Rock_Art.jpg/800px-Gobustan_Rock_Art.jpg" alt="Gobustan Kaya Resimleri" />
+    
+          <p>Son olarak, Azerbaycan doğasında karşılaşabileceğiniz bir diğer doğal güzellik ise 
+            çeşitli termal ve kaplıca kaynaklarıdır. Bu kaynaklar hem sağlık turizmi için 
+            kullanılır hem de bölge ekonomisine katkı sağlar. Ülkenin farklı noktalarında yer 
+            alan kaplıcalar, şifalı suları ile yerli ve yabancı turistlerin ilgisini çeker.</p>
+
+             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9_Sheki_Thermal_Springs.jpg/800px-Sheki_Thermal_Springs.jpg" alt="Azerbaycan Kaplıcaları" />
+    
+          <p>Azerbaycan doğası, tüm bu çeşitlilik ve güzelliklerle keşfedilmeyi bekleyen bir cennet
+           gibidir. Doğa sporlarından, ekoturizme; kültürel gezilerden, bilimsel araştırmalara 
+          kadar birçok alanda olanak sunar. Her mevsim farklı bir yüzüyle büyüleyen bu coğrafya, 
+           ziyaretçilerine unutulmaz deneyimler yaşatır.</p>
+  </div>
+      `;
       break;
+
     case "inciler":
       baslikText = "💎 Azerbaycan'ın İncileri";
       arkaPlan = "background-inciler.jpg";
@@ -380,6 +518,12 @@
       body.style.backgroundImage = `url('${arkaPlan}')`;
       document.getElementById("menu").classList.remove("open");
     }
+
+
+
+
+  
+
   </script>
 </body>
 </html>
