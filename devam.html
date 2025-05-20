@@ -10,7 +10,7 @@
   />
   
 
-
+ 
 
 
 
@@ -26,7 +26,7 @@
     body {
       height: 100%;
       font-family: "Poppins", sans-serif;
-      background-size: 110% auto; /* Arka planı biraz büyüttük */
+      background-size: 110% auto;
       background-position: center;
       background-repeat: no-repeat;
       color: white;
@@ -61,7 +61,8 @@
       border-radius: 2px;
       transition: all 0.4s;
     }
-
+   
+    
     .menu {
       position: fixed;
       top: 0;
@@ -186,24 +187,25 @@
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    background-color: #222; /* Siyah kutu efekti */
+    background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   }
 
-  h1 {
-    text-align: center;
+  h1{
+    text-align: justify;
     margin-bottom: 25px;
-    color: #c4a64f; /* Altın sarısı başlık */
+    color: #c4a64f;
   }
 
   p {
     line-height: 1.7;
     margin-bottom: 18px;
     font-size: 1.1rem;
+
   }
 
   img {
@@ -214,6 +216,203 @@
     box-shadow: 0 0 15px rgba(196,166,79,0.5);
   }
 
+  #dogasi {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px 20px;
+}
+
+#dogasi .container {
+  max-width: 900px;
+  margin: auto;
+ ;
+  color: #eee;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  overflow: hidden;
+}
+
+
+#dogasi h1 {
+  text-align: center;
+  color: #c4a64f;
+  margin-bottom: 25px;
+}
+
+#dogasi p {
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+
+.float-left {
+  float: left;
+  width: 400px;
+  margin: 10px 20px 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.float-right {
+  float: right;
+  width: 400px;
+  margin: 10px 0 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+
+@media (max-width: 768px) {
+  .float-left, .float-right {
+    float: none;
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+  }
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  overflow: hidden;
+  margin: 30px auto;
+  border-radius: 20px;
+  background-color: #111; /* siyah kutu */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  width: calc(800px * 5); /* 4 resim varsa */
+  animation: slide 40s infinite;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slider-track img {
+  display: block;
+  width: 800px;
+  height: 450px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Animasyon tanımı */
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  12.5%  { transform: translateX(-800px); }
+  25%  { transform: translateX(-1600px); }
+  37.5%  { transform: translateX(-2400px); }
+  50%  { transform: translateX(-3200px); }
+  62.5%  { transform: translateX(-2400px); }
+  75%  { transform: translateX(-1600px); }
+  87.5%  { transform: translateX(-800px); }
+  100% { transform: translateX(0); }
+}
+
+.tarih-bolumu {
+  background-color:  rgba(30, 30, 60, 0.7);
+  box-shadow: 0 0 15px  rgb(255 , 255, 255);
+  border: 3px solid rgb(255 , 255, 255);
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  border-radius: 8px;
+  overflow: hidden; /
+}
+
+.tarih-bolumu h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  color: #f0c040;
+}
+
+.tarih-bolumu p {
+  margin-bottom: 25px;
+  font-size: 1.3rem;
+}
+
+.tarih-bolumu img {
+  display: block;
+  width: 900px;
+  height: auto;
+  margin: 10px auto 20px auto;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(240, 192, 64, 0.4);
+}
+
+.tarih-bolumu:hover {
+  transform: scale(1.02);
+}
+
+.eski-simdi {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px  rgb(255 , 255, 255);
+  border: 3px solid rgb(255 , 255, 255);
+  max-width: 1500px;
+  margin: 40px auto;
+  padding: 30px 40px;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  border-radius: 8px;
+  overflow: hidden; /
+}
+
+.eski-simdi h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  color: #f0c040;
+}
+
+.eski-simdi p {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+.eski-simdi img {
+  display: block;
+  width: 900px;
+  height: auto;
+  margin: 10px auto 20px auto;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(240, 192, 64, 0.4);
+}
+
+.eski-simdi:hover {
+  transform: scale(1.02);
+}
+
+
+.video-box {
+  max-width: 1300px;
+  margin: 60px auto;
+  
+  border-radius: 16px;
+  background: linear-gradient(#111, #111) padding-box,
+              linear-gradient(135deg, #00ff99, #0099ff) border-box;
+  border: 4px solid transparent;
+  box-shadow: 0 0 25px rgba(0, 255, 180, 0.2);
+}
+
+.custom-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+
+ }
+ 
   </style>
 </head>
 <body style="background-image: url('Background2.png');" id="body">
@@ -248,6 +447,8 @@
       const menu = document.getElementById("menu");
       menu.classList.toggle("open");
     }
+
+   
 
     function bolumGoster(bolum) {
   const icerik = document.getElementById("icerik");
@@ -427,12 +628,146 @@
     case "tarih":
       baslikText = "📜 Azerbaycan Tarihi";
       arkaPlan = "background-tarih.jpg";
-      icerikHTML = "<h2>Azerbaycan Tarihi</h2><p>Buraya Azerbaycan tarihi hakkında bilgileri yazabilirsiniz.</p>";
+      icerikHTML =` <h2>Azerbaycan Tarihi</h2>
+     <div class="tarih-bolumu">
+        <section >
+            <h2>🏛️ Manna ve Atropatena Dönemi (M.Ö. 9. yy – M.Ö. 2. yy)</h2>
+            <img src="manna.jpg" alt="Manna Dönemi Kalıntıları">
+            <p>
+               Azerbaycan topraklarında bilinen en eski devletlerden biri Manna Krallığı’dır. M.Ö. 9. yüzyılda
+                Urmiye Gölü çevresinde kurulan Manna, özellikle tarım, hayvancılık ve yerleşik hayat 
+                açısından önemli bir gelişim göstermiştir. Komşu Asur ve Urartu uygarlıklarıyla hem
+               diplomatik hem de askeri ilişkiler içinde olmuşlardır. Manna'nın merkezi, günümüz 
+               Güney Azerbaycan'ında yer almaktaydı. Manna'nın yıkılmasından sonra M.Ö. 4. yüzyılda 
+               Atropatena devleti kuruldu. Bu devlet, adını Pers generali Atropat'tan alır. 
+               Atropatena, hem yerel halkın yönetimini hem de Helenistik kültür etkilerini bir 
+               araya getirerek bölgesel bir güç haline gelmiştir. Atropatena’nın başkenti 
+               Ganzak şehri idi. Bu dönemde bölgedeki şehirleşme artmış, ticaret yolları 
+               gelişmiş ve tarım daha da yaygınlaşmıştır.
+            </p>
+         </div>
+         <div class="tarih-bolumu">
+            <h2>🏺 Albanlar ve Erken Hristiyanlık Dönemi (M.Ö. 1. yy – M.S. 4. yy)</h2>
+            <img src="alban_kilisesi.jpg" alt="Alban Kilisesi">
+            <p>
+               M.Ö. 1. yüzyılda Kafkasya'nın kuzeydoğusunda kurulan Alban (Albanya) Krallığı, bugünkü
+                Azerbaycan’ın kuzey kesimlerinde hüküm sürdü. Albanlar, bölgedeki ilk yerli halklardan 
+                biri olup, farklı diller ve kültürlerin kaynaştığı bir toplum yapısına sahipti. 
+                Zamanla Roma ve Part imparatorluklarının etkisi altında kalan Albanya, bağımsızlığını
+               uzun süre korudu.Hristiyanlık 4. yüzyılda Alban topraklarına ulaşarak resmî din haline 
+               geldi. Bu gelişmeyle birlikte kilise mimarisi ve dini kültür hızlı şekilde yayıldı.
+                Bugün Göyçay ve Şeki gibi bölgelerdeki kilise kalıntıları, Alban uygarlığının bu 
+                etkileyici dönemine ışık tutmaktadır.
+            </p>
+            </div>
+             <div class="tarih-bolumu">
+              <h2>⚔️ Sasani ve Arap İslam Dönemi (M.S. 4. yy – 9. yy)</h2>
+              <img src="ilk_medrese.jpg" alt="İlk Medreselerden Biri">
+               <p>
+              4. yüzyıldan itibaren Sasani İmparatorluğu, Albanya topraklarını etki altına aldı.
+               Bu süreçte Zerdüştlük dini baskın hale geldi. Ancak 7. yüzyılda Arap ordularının 
+               bölgeye girmesiyle büyük bir değişim yaşandı. Halifelik güçleri Azerbaycan’ı 
+               fethederek İslamiyet’i yaymaya başladı. Bu, Azerbaycan’ın siyasi ve dini tarihinde 
+               büyük bir dönüm noktası oldu. İslam'ın gelişiyle birlikte yeni bir toplumsal 
+               düzen kuruldu. Medreseler, camiler ve yeni kentleşme modelleri benimsendi. 
+               Şehirler İslam kültürü ile tanışırken, ticaret yolları da Müslüman dünyasının 
+               önemli merkezleriyle birleşti. Bu dönem, Azerbaycan'ın kültürel ve bilimsel 
+               alanda gelişmeye başladığı bir devreyi temsil eder.
+              </p>  
+            </div>
+            <div class="tarih-bolumu">
+              <h2>🏰 Şirvanşahlar Dönemi (9. yy – 16. yy)</h2>
+             <img src="sirvansahlar_sarayi.jpg"  alt="Şirvanşahlar Sarayı">
+               <p>
+              Şirvanşahlar, Azerbaycan’ın tarihindeki en uzun soluklu ve etkili devletlerden 
+              biridir. 9. yüzyılda ortaya çıkan bu hanedan, özellikle bugünkü Azerbaycan 
+              topraklarında 700 yıl boyunca hüküm sürdü. Başkentleri Şamahı, önemli bir kültür 
+              ve ticaret merkezi haline geldi. Şirvanşahlar dönemi, Azerbaycan kültürünün altın
+               çağlarından biri olarak kabul edilir. Bu dönemde mimaride önemli eserler verildi;
+                Şirvanşahlar Sarayı ve Kız Kalesi gibi yapılar günümüzde bile mimari harikalar
+                 olarak görülür. Ayrıca edebiyat, bilim ve sanat alanlarında önemli ilerlemeler
+                  yaşandı. Şirvanşahlar, hem İslam kültürünü yaşatırken hem de bölgedeki yerel
+                   gelenekleri korudu.
+              </p>  
+            </div>
+            <div class="tarih-bolumu">
+              <h2>🏹 Selçuklu ve İlhanlı Dönemi</h2>
+            <img src="selcuklu_minaresi.jpg" alt="Selçuklu Minare">
+               <p>
+              11. yüzyılda Selçuklu Türkleri Azerbaycan topraklarına girerek bölgenin siyasi 
+              yapısını değiştirdi. Selçuklular, bölgeyi Türk-İslam dünyasının önemli bir parçası 
+              haline getirdi ve kültürel olarak Anadolu ve İran ile yakın ilişkiler kuruldu.
+               Bu dönemde pek çok medrese, cami ve han inşa edildi.  12. yüzyılda ise İlhanlılar
+                bölgeyi yönetti. İlhanlılar Moğol kökenli bir devletti ve Azerbaycan’da merkezi
+                bir yönetim kurdular. Bu dönem, Moğol istilalarına rağmen sanat ve bilim 
+                alanlarında gelişmelerin yaşandığı bir süreç oldu.
+              </p>  
+            </div>
+            <div class="tarih-bolumu">
+              <h2>🕌 Safevîler Dönemi (16. yy – 18. yy)</h2>
+            <img src="safeviler_cami.jpg"  alt="Safevîler Dönemi Camii">
+               <p>
+            16. yüzyılda Safevîler, Azerbaycan’ın tamamında hakimiyet kurdu ve bu dönem, 
+            Azerbaycan tarihinde büyük bir dönüm noktası oldu. Safevîler, Şii İslam’ı devlet 
+            dini olarak kabul edip, bölgedeki mezhebi yapıyı şekillendirdi. Şah İsmail Safevî’nin 
+            liderliğinde Azerbaycan büyük bir kültür ve sanat merkezi haline geldi. Tebriz,
+             dönemin başkenti olarak önemli bir kültürel ve ticari merkezdi. Safevîler mimaride
+              de büyük ilerlemeler kaydetti; özellikle Tebriz ve Şirvan’da birçok cami ve saray 
+              inşa edildi.
+              </p>  
+            </div>
+            <div class="tarih-bolumu">
+              <h2>🏴 Çarlık Rusyası Dönemi (19. yy)</h2>
+            <img src="baku_petrol.jpg"  alt="Bakü Petrol Kuyuları">
+               <p>
+            19. yüzyılda Azerbaycan toprakları, Rus İmparatorluğu’nun hakimiyetine girdi. Bu dönem,
+             Azerbaycan için büyük sosyal ve ekonomik değişimlerin yaşandığı bir süreç oldu. Sanayi
+              gelişmeye başladı, özellikle petrol çıkarımı önemli bir ekonomik kaynak haline geldi.
+             Bakü, hızla gelişen bir petrol merkezi olarak dünya çapında tanındı. Ancak bu gelişme,
+              aynı zamanda bölgedeki halkın yaşam koşullarında sorunlara ve sosyal gerilimlere yol 
+              açtı. Çarlık dönemi, Azerbaycan’ın modernleşme sürecinin başlangıcı olarak da görülür.
+               </p>  
+            </div>
+        <div class="tarih-bolumu">
+              <h2>🚩 Sovyetler Dönemi (20. yy)</h2>
+              <img src="sovyet_baku.jpg"  alt="Sovyet Dönemi Bakü">
+                <p>
+            1920 yılında Azerbaycan Sovyetler Birliği’nin bir parçası oldu. Sovyet dönemi,
+             sanayileşme ve eğitim alanında hızlı gelişmeler getirdi. Ancak aynı zamanda siyasi
+              baskılar, zorunlu kolektivizasyon ve kültürel asimilasyon gibi zorluklar yaşandı.
+            Azerbaycan Sovyetler döneminde eğitim, bilim ve kültür alanlarında önemli ilerlemeler 
+            kaydetti. Bakü’de birçok yeni eğitim kurumu açıldı, petrol ve kimya endüstrisi hızla 
+            büyüdü. Ancak Sovyet rejiminin politikaları Azerbaycan halkı üzerinde derin izler 
+            bıraktı.
+               </p>  
+            </div>
+             <div class="tarih-bolumu">
+              <h2>🏛️Modern Azerbaycan ve Karabağ (1991 – Günümüz)</h2>
+          <img src="modern_baku.jpg"alt="Modern Bakü">
+                <p>
+            1991 yılında Sovyetler Birliği'nin dağılmasıyla Azerbaycan bağımsızlığını ilan etti. 
+            Ancak bu süreçte Ermenistan’la Dağlık Karabağ bölgesi üzerinde ciddi çatışmalar yaşandı.
+             1992-1994 yıllarındaki Birinci Karabağ Savaşı sonrası Ermenistan, Dağlık Karabağ 
+             ve çevresindeki yedi bölgeyi işgal etti. Bu durum yüz binlerce Azerbaycanlının göç 
+             etmesine yol açtı. Yıllarca süren müzakereler sonuçsuz kaldı. 2020 yılında başlayan
+              ve 44 gün süren İkinci Karabağ Savaşı ile Azerbaycan, işgal altındaki topraklarının 
+              büyük kısmını geri aldı. Günümüzde Azerbaycan, Karabağ’ın yeniden inşası, altyapının 
+              modernleştirilmesi ve göçmenlerin geri dönüşü için büyük yatırımlar yapmaktadır. Şuşa 
+              gibi tarihi şehirler yeniden canlandırılırken, bölgede akıllı köyler ve çevre dostu 
+              projeler hayata geçiriliyor. Bugün Azerbaycan halkı barış içinde yaşamakta, genç
+               nesiller teknoloji, eğitim ve kültürel gelişmelere odaklanmaktadır. Karabağ artık
+                sadece bir savaş alanı değil, yeniden doğan bir gelecek umudu olarak görülmektedir.
+                </p>  
+            </div>
+        </section>
+      `;
       break;
     case "dogasi":
       baslikText = "🌿 Azerbaycan Doğası";
       arkaPlan = "background-dogasi.jpg";
-      icerikHTML = `"<h2>Azerbaycan Doğası</h2>
+      icerikHTML = `<h2>Azerbaycan Doğası</h2>
+      
+
       <div class="container">
          <p>Azerbaycan, Kafkasların incisi olarak doğanın tüm zenginliklerini barındıran 
           eşsiz bir coğrafyaya sahiptir. Kura Nehri'nin bereketli vadilerinden, Hazar 
@@ -440,7 +775,7 @@
            kadar pek çok farklı ekosistemi içinde barındırır. Bu çeşitlilik, Azerbaycan'ın
            hem doğal yaşam hem de turizm açısından önemli bir merkez olmasını sağlar.</p>
     
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Azerbaijan_nature.jpg" // alt="Azerbaycan Doğası 1" />
+          <img src="Doga.jpg" // alt="Azerbaycan Doğası 1" / class="float-left" >
     
           <p>Ülkenin kuzeydoğusunda, yüksek dağlar ve yaylalar bulunur. Büyük Kafkas Dağları'nın 
             güney yamaçları, yıl boyunca karla kaplı zirveleriyle dikkat çeker. Bu dağlar,
@@ -454,7 +789,7 @@
            değerlidir. Ayrıca, Talış Dağları’nda birçok endemik hayvan türü bulunur ve bu alan 
            doğa koruma açısından büyük önem taşır.</p>
      
-           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Talysh_Mountains_-_panoramio.jpg/800px-Talysh_Mountains_-_panoramio.jpg" alt="Talış Dağları" />
+           <img src="TalışDağları.jpg" alt="Talış Dağları" / class="float-right">
     
           <p>Ülkenin güneyinde Hazar Denizi’nin kıyıları uzanır. Burası sadece deniz ekosistemi açısından değil,
           aynı zamanda zengin tuz ve mineral yataklarıyla da dikkat çeker. Hazar Denizi, birçok göçmen kuş
@@ -462,26 +797,59 @@
            kıyısında bulunan mangrov ormanları ve sulak alanlar, biyoçeşitliliği artıran önemli 
            habitatlardır.</p>
 
-          <p>Azerbaycan’da çok sayıda nehir, göl ve şelale vardır. Kura Nehri, ülkenin en büyük
-           nehridir ve tarım açısından hayati öneme sahiptir. Nehrin çevresindeki vadiler, verimli 
-           toprakları ve ılıman iklimi ile tarımın merkezi konumundadır. Bu alanlarda meyve 
-           bahçeleri, sebze tarlaları ve bağlar yaygındır.</p>
+          <p>Azerbaycan, doğal su kaynakları açısından oldukça zengin bir ülkedir. Ülke topraklarında 
+            çok sayıda nehir, göl ve şelale bulunmaktadır. Bu su kaynakları hem doğal yaşamın 
+            sürdürülmesinde hem de tarımsal faaliyetlerin gelişmesinde önemli rol oynar. Özellikle 
+            Kura Nehri, Azerbaycan’ın en büyük ve en önemli nehri olarak öne çıkar. Gürcistan’dan 
+            doğup Hazar Denizi’ne dökülen bu nehir, ülkenin birçok bölgesinden geçerek hayat verir.
+            Kura Nehri’nin geçtiği geniş vadiler, sahip oldukları verimli topraklar ve ılıman iklim
+             sayesinde Azerbaycan tarımının kalbi konumundadır. Bu bölgelerde meyve bahçeleri, üzüm 
+             bağları ve sebze tarlaları oldukça yaygındır. Nehrin sağladığı sulama imkanları, yerel 
+             ekonomiyi desteklerken aynı zamanda doğal ekosistemin korunmasına da katkı sağlar.
+             Bu bereketli topraklar, hem yerel halkın geçim kaynağı hem de doğa severlerin keşfetmekten
+              keyif alacağı doğal güzelliklerle doludur.</p>
 
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kura_River_in_Azerbaijan.jpg/800px-Kura_River_in_Azerbaijan.jpg" alt="Kura Nehri" />
+
+<div class="slider-container">
+  <div class="slider-track">
+    <img src="doga1.jpg" alt="Doğa 1">
+    <img src="doga2.jpg" alt="Doğa 2">
+    <img src="doga3.jpg" alt="Doğa 3">
+    <img src="doga4.jpg" alt="Doğa 4">
+    <img src="doga5.jpg" alt="Doğa 5">
+  </div>
+</div>
+
+            <img src="kurcayi.jpg" alt="Kura Nehri" / class="float-left">
     
-          <p>Doğa yürüyüşleri ve kampçılık için tercih edilen bölgelerden biri de Gobustan Milli 
-            Parkı’dır. Burası hem tarih hem doğa açısından zengindir; milyonlarca yıl önceki kaya 
-            resimleri ve fosillerin yanı sıra, benzersiz doğa manzaralarına sahiptir. Gobustan’ın 
-            volkanik çamur bacaları da jeolojik açıdan ilgi çeken doğal oluşumlardır.</p>
+          <p>Azerbaycan’ın en dikkat çekici doğal ve tarihi bölgelerinden biri olan Gobustan Milli 
+            Parkı, doğa yürüyüşü ve kampçılık yapmak isteyenlerin vazgeçilmez duraklarından biridir.
+           Burası yalnızca doğal güzellikleriyle değil, aynı zamanda binlerce yıllık geçmişiyle 
+           de büyüleyicidir. Park içerisinde yer alan antik kaya resimleri, insanlığın tarih öncesi
+            dönemlerine ışık tutar ve UNESCO Dünya Mirası Listesi’nde yer almaktadır.
+           Gobustan, sadece kültürel zenginliğiyle değil, volkanik çamur bacaları gibi sıra dışı 
+           doğal oluşumlarıyla da tanınır. Bu bacalardan çıkan sıcak çamurlar, yer altındaki 
+           jeotermal faaliyetlerin yüzeye yansımasıdır ve bilim insanlarının ilgisini çekmektedir. 
+           Aynı zamanda, bu bölge yürüyüşçüler için etkileyici doğa manzaraları, geniş çayırlar 
+           ve kaya oluşumları ile doludur.
+           Gobustan, hem doğaseverler hem de tarih tutkunları için eşsiz bir keşif alanıdır.</p>
 
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Gobustan_Rock_Art.jpg/800px-Gobustan_Rock_Art.jpg" alt="Gobustan Kaya Resimleri" />
+            <img src="Gobustan.jpg" alt="Gobustan Kaya Resimleri" / class="float-right">
     
           <p>Son olarak, Azerbaycan doğasında karşılaşabileceğiniz bir diğer doğal güzellik ise 
             çeşitli termal ve kaplıca kaynaklarıdır. Bu kaynaklar hem sağlık turizmi için 
             kullanılır hem de bölge ekonomisine katkı sağlar. Ülkenin farklı noktalarında yer 
-            alan kaplıcalar, şifalı suları ile yerli ve yabancı turistlerin ilgisini çeker.</p>
+            alan kaplıcalar, şifalı suları ile yerli ve yabancı turistlerin ilgisini çeker.Bunlardan
+           biri de bölgedeki termal kaplıcalardır. Şeki Termal Kaplıcaları, yer altından çıkan sıcak
+           ve mineralli sularıyla özellikle cilt, romatizma ve eklem rahatsızlıklarına iyi gelmektedir.
+           Kaplıca sularında kükürt, kalsiyum ve magnezyum gibi sağlığa faydalı mineraller bulunur.
+            Bu nedenle hem yerel halk hem de turistler, şifa bulmak ve dinlenmek amacıyla bu bölgeyi 
+            tercih eder. Aynı zamanda yemyeşil doğayla iç içe olması, Şeki’yi hem sağlık hem de doğa 
+            turizmi açısından cazip bir nokta haline getirir.
 
-             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9_Sheki_Thermal_Springs.jpg/800px-Sheki_Thermal_Springs.jpg" alt="Azerbaycan Kaplıcaları" />
+</p>
+
+            
     
           <p>Azerbaycan doğası, tüm bu çeşitlilik ve güzelliklerle keşfedilmeyi bekleyen bir cennet
            gibidir. Doğa sporlarından, ekoturizme; kültürel gezilerden, bilimsel araştırmalara 
@@ -499,7 +867,49 @@
     case "eskisimdi":
       baslikText = "⏳ Eskiden ve Şimdi";
       arkaPlan = "background-eskisimdi.jpg";
-      icerikHTML = "<h2>Eskiden ve Şimdi</h2><p>Buraya Azerbaycan'ın geçmişten günümüze değişim</p>";
+      icerikHTML =  `<h2>Eskiden ve Şimdi</h2>
+       <div class="eski-simdi"> 
+
+ <div class="video-box">
+     <video class="custom-video" autoplay loop controls>
+        <source src="Azerbaijan.mp4" type="video/mp4">
+        Tarayıcınız video etiketini desteklemiyor.
+     </video>
+    </div>
+    <h2>Modern Azerbaycan: Geçmişin Mirası, Geleceğin Vizyonu</h2>
+        <p>
+          Azerbaycan, tarih boyunca birçok medeniyete ev sahipliği yapmış, zengin kültürel
+           mirasıyla ön plana çıkan bir ülkedir. Ancak bu köklü geçmiş, onu sadece tarihle 
+           sınırlı bir ülke yapmaz. Bugünün Azerbaycan’ı; modern şehircilik anlayışı,
+            teknolojik altyapısı, çevreci projeleri ve çağdaş yaşam alanlarıyla bölgenin 
+            en dinamik ve gelişen ülkelerinden biridir. Bakü’nün modern silueti, akıllı
+             şehir uygulamaları ve çevre dostu mesken projeleri, Azerbaycan’ın geleceğe 
+             olan bakışını yansıtırken; aynı şehirde korunmuş tarihî yapılar, müzeler ve 
+             kültürel simgeler geçmişle kurulan güçlü bağı yaşatmaktadır. Ülke genelinde hem
+              kırsal alanlarda hem de büyük şehirlerde yükselen modern konutlar, geniş yeşil
+               alanlar ve yaşam kalitesini artıran çözümlerle halkına daha yaşanabilir bir
+                ortam sunulmaktadır. Azerbaycan bugün, sadece tarihini koruyan bir ülke değil; 
+                aynı zamanda yenilikçi, planlı ve vizyoner bir geleceği inşa eden güçlü bir 
+                devlettir. Bu eşsiz denge, ülkenin hem kültürel hem de teknolojik gelişimini 
+                bir arada yansıtan özel bir yapıya dönüşmesini sağlamaktadır.
+        </p>
+     
+        <img src="modern_baku.jpg"alt="Modern Bakü">
+        <div class="eski-simdi">
+              
+          
+         
+                <p>
+            
+                </p>  
+            <h2>🏛️Modern Azerbaycan ve Karabağ (1991 – Günümüz)</h2>
+            </div>
+       
+   
+  </div>
+       `;
+
+      
       break;
         case "iletisim":
           baslikText = "📧 İletişim";
@@ -519,11 +929,7 @@
       document.getElementById("menu").classList.remove("open");
     }
 
-
-
-
   
-
   </script>
 </body>
 </html>
