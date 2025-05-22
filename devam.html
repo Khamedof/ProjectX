@@ -414,8 +414,291 @@
  }
 
  
+ .container2 {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
 
- 
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #f39c12;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(243, 156, 18, 0.5);
+  }
+
+  .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f39c12;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: flex; /* Flexbox kullanımı */
+  align-items: center; /* Dikey merkezleme */
+  justify-content: center; /* Yatay merkezleme */
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Görseli daireye sığdırır */
+  object-position: center; /* Görseli merkeze hizalar */
+}
+
+  .name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #f39c12;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+    color: #ccc;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .card {
+      padding: 1rem;
+    }
+  }
+
+  
+  .hakkimda-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hakkimda-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f39c12;
+  text-transform: uppercase;
+}
+
+.profil-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.profil-foto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  animation: rotateIn 1.5s ease-in-out;
+}
+
+.profil-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: left;
+  max-width: 600px;
+}
+
+.hakkimda-extra {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.hakkimda-extra h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #f39c12;
+}
+
+.hakkimda-extra ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hakkimda-extra li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.hakkimda-extra li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #f39c12;
+  font-size: 1.2rem;
+}
+
+.hakkimda-gallery {
+  margin-top: 30px;
+}
+
+.hakkimda-gallery h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #f39c12;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.hakkimda-social {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.hakkimda-social h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #f39c12;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links a {
+  font-size: 1.2rem;
+  color: #f39c12;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffdd55;
+}
+
+.hakkimda-achievements {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.hakkimda-achievements h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #f39c12;
+}
+
+.hakkimda-achievements ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hakkimda-achievements li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.hakkimda-achievements li::before {
+  content: "🏅";
+  position: absolute;
+  left: 0;
+  color: #f39c12;
+  font-size: 1.2rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mutfak-animasyon {
+  animation: slideIn 1.5s ease-in-out;
+}
+
+
+
   </style>
 </head>
 <body style="background-image: url('Background2.png');" id="body">
@@ -433,7 +716,7 @@
     <button onclick="bolumGoster('dogasi')">🌿 Azerbaycan Doğası</button>
     <button onclick="bolumGoster('mutfak')">🍲 Azerbaycan Mutfağı</button>
     <button onclick="bolumGoster('inciler')">💎 Azerbaycan'ın İncileri</button>
-    <button onclick="bolumGoster('eskisimdi')">⏳ Eskiden ve Şimdi</button>
+    <button onclick="bolumGoster('eskisimdi')">⏳ Ebedî Şahsiyetler</button>
     <button onclick="bolumGoster('iletisim')">📧 İletişim</button>
   </div>
 
@@ -444,10 +727,7 @@
 
 
 
-  <script src="js/core.js">
-
-
-  </script>
+  
   
   <script>
     function menuToggle() {
@@ -471,16 +751,16 @@
       baslikText = "🍲 Azerbaycan Mutfağı";
       arkaPlan = "background-mutfak.jpg";
       icerikHTML = `
-        <h2>Azerbaycan Mutfağı</h2>
+        <h2 class="mutfak-animasyon">Azerbaycan Mutfağı</h2>
        
-        <p>
+        <p class="mutfak-animasyon">
           Azerbaycan mutfağı, zengin tarihî kökleri ve çeşitliliğiyle Orta Asya, Kafkaslar ve İran mutfaklarının kesişim 
           noktasında benzersiz bir lezzet kültürünü yansıtır. Etimolojik olarak “mutfak” kelimesi Farsça kökenli olup, 
           “pişirme yeri” anlamına gelirken, Azerbaycan mutfağı da tarih boyunca hem yerel hem de bölgesel etkilerle 
           şekillenmiştir. Bu mutfak, özellikle tarih öncesi çağlardan beri Azerbaycan topraklarında var olan farklı 
           halkların, göçlerin, ticaret yollarının ve kültürel alışverişlerin etkisiyle zenginleşmiştir.
         </p>
-        <p>
+        <p class="mutfak-animasyon">
           Azerbaycan mutfağının temel yapıtaşlarından biri, bölgenin verimli topraklarında yetişen taze sebzeler,
           baharatlar ve et ürünleridir. Özellikle kuzu eti, tavuk, balık ve sebze çeşitleri Azerbaycan yemeklerinde 
           başroldedir. Geleneksel yemeklerde genellikle doğal baharatlar ve otlar kullanılır; kimyon, sumak, kişniş ve nane 
@@ -489,7 +769,7 @@
           kültürle etkileşimde bulunmuş ve bu da yemek çeşitliliğine yansımıştır. Orta Çağ’dan itibaren hem saray mutfağı hem de
           halk mutfağı şeklinde gelişen bu zengin kültür, bugün hem günlük yaşamda hem de özel kutlamalarda önemli bir yer tutar.
         </p>
-        <p>
+        <p class="mutfak-animasyon">
           Azerbaycan mutfağının en meşhur yemeklerinden biri olan “Plov” (pilav), bölgenin sembolü gibidir. Farklı türleri olan 
           plov, genellikle baharatlı pirinçle kuzu eti, kuru meyve ve sebzelerin uyumlu birleşimiyle yapılır. Her bölgenin 
           kendine has plov tarifi bulunur ve bu yemek, misafirperverliğin ve kutlamaların ayrılmaz parçasıdır. Plovun yanı 
@@ -499,14 +779,14 @@
           geleneksel bir çorbadır. “Qutab” ise ince açılmış hamurun içine ot, kıyma ya da peynir konularak sac üzerinde pişirilen
           nefis bir lezzettir.
         </p>
-        <p>
+        <p class="mutfak-animasyon">
           Geçmişte, özellikle Sovyetler Birliği döneminde Azerbaycan mutfağı bazı modernleşme ve batılılaşma etkileri görmüş olsa da,
           köklü geleneksel tarifler nesilden nesile aktarılmıştır. 90’lı yıllardan sonra Azerbaycan mutfağı, yeniden uluslararası 
           sahnede ilgi görmeye başlamış ve dünya mutfağına özgün tatlarını sunmaya başlamıştır. Azerbaycan mutfağı sadece yemeklerle 
           değil, içecek kültürüyle de dikkat çeker. “Çay” günlük yaşamda en çok tüketilen içecektir ve özel bakır çaydanlıklarda 
           demlenerek, genellikle şeker veya reçelle servis edilir. Ayrıca, “Şirvan şərbəti” gibi meyveli ve bitkisel şerbetler de meşhurdur.
         </p>
-        <p>
+        <p class="mutfak-animasyon">
           Sonuç olarak, Azerbaycan mutfağı hem coğrafi hem de kültürel çeşitliliğin benzersiz bir yansımasıdır. 
           Her yemeği, tarihî bir yolculuğun, zengin toprakların ve içten misafirperverliğin hikayesini anlatır. 
           Geleneksel tarifler günümüzde hem evlerde hem de restoranlarda yaşatılmakta ve dünya gastronomi 
@@ -518,8 +798,8 @@
            <div class="yemek-item sol">
             <img src="yemek1.jpg" alt="Yemek 1" />
             <div class="yemek-bilgi">
-              <h3>Şah Plov</h3>
-              <p>Azerbaycan mutfağının kalbidir. Safranla renklendirilmiş ve
+              <h3 class="mutfak-animasyon">Şah Plov</h3>
+              <p class="mutfak-animasyon">Azerbaycan mutfağının kalbidir. Safranla renklendirilmiş ve
                  tereyağında pişirilmiş pirinç, altında kuzu eti, kuru meyve 
                  (erik, kayısı), kestane ve baharatlarla servis edilir. Her 
                  evin ve bölgenin kendi plov tarifi vardır. Genellikle 
@@ -531,8 +811,8 @@
           <div class="yemek-item sag">
             <img src="yemek2.jpg" alt="Yemek 2" />
             <div class="yemek-bilgi">
-              <h3>Dolma</h3>
-              <p>Üzüm yapraklarına sarılan baharatlı kıyma ve pirinç karışımı ile 
+              <h3 class="mutfak-animasyon">Dolma</h3>
+              <p class="mutfak-animasyon">Üzüm yapraklarına sarılan baharatlı kıyma ve pirinç karışımı ile 
                 yapılır. Sıklıkla sarımsaklı yoğurtla birlikte servis edilir. 
                 Ayrıca biber, domates, patlıcan gibi sebzeler de dolma olarak
                  hazırlanır. Azerbaycan'da "yarpag dolması" oldukça meşhurdur.</p>
@@ -541,8 +821,8 @@
           <div class="yemek-item sol">
             <img src="yemek3.jpg" alt="Yemek 3" />
             <div class="yemek-bilgi">
-              <h3>Düşbere</h3>
-              <p>Minik mantılarla yapılan geleneksel bir çorbadır. Hamurun içine
+              <h3 class="mutfak-animasyon">Düşbere</h3>
+              <p class="mutfak-animasyon">Minik mantılarla yapılan geleneksel bir çorbadır. Hamurun içine
                  kıyma koyularak küçük küçük hazırlanır. Et suyunda pişirilir 
                  ve genellikle sarımsaklı sirke ile birlikte servis edilir. 
                  Azerbaycan’da düşberenin mantıları ne kadar küçükse,
@@ -552,8 +832,8 @@
           <div class="yemek-item sag">
             <img src="yemek4.jpg" alt="Yemek 4" />
             <div class="yemek-bilgi">
-              <h3>Kebap ve Şişlik</h3>
-              <p>Odun kömüründe pişirilen et (kuzu, tavuk, balık) şişleri. Yanında 
+              <h3 class="mutfak-animasyon">Kebap ve Şişlik</h3>
+              <p class="mutfak-animasyon">Odun kömüründe pişirilen et (kuzu, tavuk, balık) şişleri. Yanında 
                 közlenmiş domates-biber, soğan halkaları ve nar ekşisiyle servis 
                 edilir. Bahçelerde yapılan pikniklerin vazgeçilmezi, aynı zamanda 
                 geleneksel misafir ağırlama yemeğidir.</p>
@@ -562,8 +842,8 @@
           <div class="yemek-item sol">
             <img src="yemek5.jpg" alt="Yemek 5" />
             <div class="yemek-bilgi">
-              <h3>Kükü</h3>
-              <p>Ispanak, kişniş, dereotu gibi yeşilliklerle çırpılmış yumurtadan
+              <h3 class="mutfak-animasyon">Kükü</h3>
+              <p class="mutfak-animasyon">Ispanak, kişniş, dereotu gibi yeşilliklerle çırpılmış yumurtadan
                  yapılan bir tür omlettir. Fırında ya da tavada pişirilir. 
                  Soğuk veya sıcak olarak yenebilir. Hem sağlıklı hem de hafif 
                  olduğu için özellikle yaz aylarında tercih edilir.</p>
@@ -572,8 +852,8 @@
           <div class="yemek-item sag">
             <img src="yemek6.jpg" alt="Yemek 6" />
             <div class="yemek-bilgi">
-              <h3>Piti</h3>
-              <p>Şeki bölgesine özgü olan bu yemek, küçük seramik güveçlerde hazırlanır. 
+              <h3 class="mutfak-animasyon">Piti</h3>
+              <p class="mutfak-animasyon">Şeki bölgesine özgü olan bu yemek, küçük seramik güveçlerde hazırlanır. 
                 İçinde kuzu eti, nohut, kestane, patates, domates ve safran bulunur.
                 Yavaş ateşte saatlerce pişirilir. Yemeğin suyu ve katısı ayrı ayrı
                 yenir – özel bir servis şekli vardır.</p>
@@ -582,8 +862,8 @@
           <div class="yemek-item sol">
             <img src="yemek7.jpg" alt="Yemek 7" />
             <div class="yemek-bilgi">
-              <h3>Bozbaş</h3>
-              <p>Kuzu eti, nohut, patates ve soğanla hazırlanan yoğun kıvamlı bir 
+              <h3 class="mutfak-animasyon">Bozbaş</h3>
+              <p class="mutfak-animasyon">Kuzu eti, nohut, patates ve soğanla hazırlanan yoğun kıvamlı bir 
                 et yemeğidir. Bazen erik veya domates de eklenir. Özellikle kış 
                 aylarında sıkça tüketilir. Besleyici ve doyurucudur. Hem çorba 
                 hem ana yemek olarak kabul edilir.</p>
@@ -592,8 +872,8 @@
           <div class="yemek-item sag">
             <img src="yemek8.jpg" alt="Yemek 8" />
             <div class="yemek-bilgi">
-              <h3>Gutab</h3>
-              <p>İnce açılmış hamurun içine kıyma, ot (ispanak, kişniş) ya da 
+              <h3 class="mutfak-animasyon">Gutab</h3>
+              <p class="mutfak-animasyon">İnce açılmış hamurun içine kıyma, ot (ispanak, kişniş) ya da 
                  peynir konularak yarım ay şeklinde kapatılır ve sacda pişirilir. 
                  Üzerine tereyağı sürülerek sıcak yenir. Çayla birlikte ya da ayranla 
                  tüketilir. Genellikle sokak lezzeti olarak da satılır.</p>
@@ -602,8 +882,8 @@
           <div class="yemek-item sol">
             <img src="yemek9.jpg" alt="Yemek 9" />
             <div class="yemek-bilgi">
-              <h3>Xəngəl</h3>
-              <p>Azerbaycan mutfağının sevilen yemeklerinden biridir. İnce açılmış 
+              <h3 class="mutfak-animasyon">Xəngəl</h3>
+              <p class="mutfak-animasyon">Azerbaycan mutfağının sevilen yemeklerinden biridir. İnce açılmış 
                 hamur parçaları haşlanarak hazırlanır ve genellikle kuzu eti, 
                 kızarmış soğan ve sarımsaklı yoğurtla birlikte servis edilir.
                  Etli ve etsiz (yalnızca yoğurtlu) çeşitleri bulunur. Doyurucu 
@@ -613,8 +893,8 @@
           <div class="yemek-item sag">
             <img src="yemek10.jpg" alt="Yemek 10" />
             <div class="yemek-bilgi">
-              <h3>Şekerbura ve Paxlava</h3>
-              <p>Şekerbura: Ceviz, fındık veya badem içiyle doldurulan, hilal
+              <h3 class="mutfak-animasyon">Şekerbura ve Paxlava</h3>
+              <p class="mutfak-animasyon">Şekerbura: Ceviz, fındık veya badem içiyle doldurulan, hilal
                  şeklinde bir hamur tatlısı. Üzerine özel desenler verilir.
                  
                  Paxlava: Kat kat yufka arasına ceviz içi konur, bal veya
@@ -630,7 +910,62 @@
     case "hakkimda":
       baslikText = "👤 Benim Hakkımda";
       arkaPlan = "background-hakkimda.png";
-      icerikHTML = "<h2>Benim Hakkımda</h2><p>Buraya kendinizle ilgili bilgileri yazabilirsiniz.</p>";
+      icerikHTML = `
+   <div class="hakkimda-container">
+  <h2>👤 Benim Hakkımda</h2>
+  <div class="hakkimda-content">
+    <div class="profil-section">
+      <img src="profil.jpg" alt="Profil Fotoğrafı" class="profil-foto">
+      <p class="profil-text">
+        Merhaba! Ben Aydın Khamedov, bu web sitesinin yaratıcısıyım. Azerbaycan'ın kültürel ve doğal güzelliklerini tanıtmak için bu projeyi geliştirdim. Yazılım geliştirme, tasarım ve içerik oluşturma konularında tutkuluyum.
+      </p>
+    </div>
+    <div class="hakkimda-extra">
+      <h3>Hobilerim ve İlgi Alanlarım</h3>
+      <ul>
+        <li>📚 Kitap Okuma</li>
+        <li>🌿 Doğa Yürüyüşleri</li>
+        <li>💻 Yazılım Geliştirme</li>
+        <li>🎨 Grafik Tasarım</li>
+        <li>🎶 Müzik Dinleme</li>
+      </ul>
+    </div>
+    <div class="hakkimda-gallery">
+      <h3>Fotoğraf Galerisi</h3>
+      <div class="gallery">
+        <img src="galeri1.jpg" alt="Galeri Fotoğrafı 1">
+        <img src="galeri2.jpg" alt="Galeri Fotoğrafı 2">
+        <img src="galeri3.jpg" alt="Galeri Fotoğrafı 3">
+        <img src="galeri4.jpg" alt="Galeri Fotoğrafı 4">
+      </div>
+    </div>
+  </div>
+
+   <div class="hakkimda-achievements">
+    <h3>Başarılar ve Sertifikalar</h3>
+    <ul>
+      <li>🏆 2024 - Ilk Web tasarımını yaptım</li>
+      <li>📜 2023 - Azerbaycan Matematik Olimpiyat</li>
+      <li>💻 2022 - Teknofest 2022</li>
+      <li>📜 2022 - Azerbaycan Matematik Olimpiyat</li>
+      <li>♟️ 2020 - Azerbaycan Satranç Olimpiyat</li>
+      <li>♟️ 2019 - Azerbaycan Satranç Olimpiyat</li>
+      <li>♟️ 2018 - Azerbaycan Satranç Olimpiyat</li>
+    </ul>
+  </div>
+
+
+  <div class="hakkimda-social">
+    <h3>Beni Takip Edin</h3>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/ayd%C4%B1n-khamedov-41701a2b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Khamedof" target="_blank">GitHub</a>
+      <a href="https://www.instagram.com/khamedoff.07?igsh=MXE4cmJvenBrYW5xcQ%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+      <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    </div>
+  </div>
+</div>
+  `;
       break;
     case "tarih":
       baslikText = "📜 Azerbaycan Tarihi";
@@ -866,10 +1201,113 @@
       `;
       break;
 
-    case "eskisimdi ":
-      baslikText = "💎 Azerbaycan'ın İncileri";
-      arkaPlan = "background-inciler.jpg";
-      icerikHTML = "<h2>Azerbaycan'ın İncileri</h2><p>Buraya Azerbaycan'ın önemli yerleri ve kültürel zenginlikleri hakkında bilgileri yazabilirsiniz.</p>";
+    case "eskisimdi":
+
+      baslikText = "⏳ Ebedî Şahsiyetler";
+      arkaPlan = "background-eskisimdi.jpg";
+      icerikHTML = `
+      
+      <div class="container2">
+  <h1>Azerbaycan’ın Büyük Şahsiyetleri</h1>
+
+  <div class="cards">
+
+     <div class="card" >
+      <div class="avatar">
+        <img src="İlhamƏliyev.jpg" alt="İlham Əliyev" />
+      </div>
+      <div class="name">İlham Əliyev</div>
+      <div class="description">Azerbaycan’ın cumhurbaşkanı, 2020 Karabağ Zaferi lideri.</div>
+    </div>
+
+     <div class="card" >
+      <div class="avatar">
+        <img src="HeydərƏliyev.jpg" alt="Heydər Əliyev" />
+      </div>
+      <div class="name">Heydər Əliyev</div>
+      <div class="description">Modern Azerbaycan devletinin kurucusu ve ülkenin istikrarını sağlayan lider.</div>
+    </div>
+
+    
+     <div class="card" >
+      <div class="avatar">
+        <img src="QabilMəmmədov.jpg" alt="Qabil Məmmədov" />
+      </div>
+      <div class="name">Qabil Məmmədov</div>
+      <div class="description">Harici siyaset alanında etkin rol oynayan, cesur ve saygı gören bir devlet adamıdır.</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">
+        <img src="uzeyir.jpg" alt="Üzeyir Hacıbeyov" />
+      </div>
+      <div class="name">Üzeyir Hacıbeyov</div>
+      <div class="description">Modern Azerbaycan müziğinin kurucusu, Doğu'nun ilk operasının bestecisi ve milli marşın yazarı.</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">
+        <img src="NizamiGencevi.jpg" alt="Nizami Gencevi" />
+      </div>
+      <div class="name">Nizami Gencevi</div>
+      <div class="description">Doğu edebiyatının en önemli şairlerinden biri, “Beşlik” adlı eserleriyle tanınır.</div>
+    </div>
+
+   
+    <div class="card">
+      <div class="avatar">
+        <img src="Mubarizİbrahimov.JPG" alt="Mubariz İbrahimov" />
+      </div>
+      <div class="name">Mubariz İbrahimov</div>
+      <div class="description">Karabağ savaşında kahramanlık gösteren Azerbaycan milli kahramanı.</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">
+        <img src="Abdurrahim_bey_Hagverdiyev.jpg" alt="Əbdürrəhim bəy Haqverdiyev" />
+      </div>
+      <div class="name">Əbdürrəhim bəy Haqverdiyev</div>
+      <div class="description">Modern Azerbaycan tiyatrosunun öncüsü, kültürel lider ve yazar.</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">
+        <img src="HəziAslanov.jpg" alt="Həzi Aslanov" />
+      </div>
+      <div class="name">Həzi Aslanov</div>
+      <div class="description">İkinci Dünya Savaşı’nda iki kez Sovyetler Birliği Kahramanı olan milli kahraman.</div>
+    </div>
+
+   
+    <div class="card">
+      <div class="avatar">
+        <img src="AlimQasımov.jpg" alt="Alim Qasımov" />
+      </div>
+      <div class="name">Alim Qasımov</div>
+      <div class="description">Dünya çapında tanınan mugam ustası ve Azerbaycan kültür elçisi.</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">
+        <img src="LevLandau.jpg" alt="Lev Landau" />
+      </div>
+      <div class="name">Lev Landau</div>
+      <div class="description">Bakü doğumlu Nobel Fizik Ödüllü teorik fizikçi.</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">
+        <img src="LotfiAZadeh.jpg" alt="Lotfi A. Zadeh" />
+      </div>
+      <div class="name">Lotfi A. Zadeh</div>
+      <div class="description">Bulanık Mantık teorisinin kurucusu, yapay zekâ ve matematik öncüsü.</div>
+    </div>
+
+
+  </div>
+</div>
+      
+      `;
       break;
     case "inciler":
       baslikText = "💎 Azerbaycan'ın İncileri";
@@ -1124,6 +1562,7 @@ Hem gündüz hem de akşam saatlerinde ziyaretçilerine huzur veren Little Venic
       body.style.backgroundImage = `url('${arkaPlan}')`;
       document.getElementById("menu").classList.remove("open");
     }
+
 
   
   </script>
