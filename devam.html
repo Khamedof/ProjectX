@@ -694,10 +694,81 @@
 }
 
 .mutfak-animasyon {
-  animation: slideIn 1.5s ease-in-out;
+  animation: slideIn 1s ease-in-out;
 }
 
 
+@media (max-width: 768px) {
+  .menu {
+    width: 100%;
+    left: -100%;
+  }
+
+  .menu.open {
+    left: 0;
+  }
+
+  .icerik {
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .yemek-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .yemek-item img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .yemek-bilgi {
+    margin: 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .profil-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profil-foto {
+    margin-bottom: 20px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  header {
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .menu button {
+    font-size: 16px;
+  }
+
+  .icerik h2 {
+    font-size: 24px;
+  }
+
+  .icerik p {
+    font-size: 14px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+}
 
   </style>
 </head>
