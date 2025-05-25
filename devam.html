@@ -698,6 +698,36 @@
 }
 
 
+
+
+/* Slider Konteyneri */
+.centered-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Görseller */
+.slider-image {
+  position: absolute;
+  max-width: 80%;
+  max-height: 80%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+
+
+/* Görsel aktif olduğunda görünür */
+.slider-image.active {
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .menu {
     width: 100%;
@@ -746,6 +776,7 @@
 }
 
 
+
 @media (max-width: 480px) {
   header {
     font-size: 20px;
@@ -770,6 +801,75 @@
   }
 }
 
+.weather-forecast {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-image: url('weather-background.jpg'); /* Hava durumu arka planı */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #fff;
+  position: relative; /* Z-index için konumlandırma ayarı */
+  z-index: 10; /* Üst katmana taşı */
+}
+
+.weather-forecast img {
+  position: relative; /* Z-index için konumlandırma ayarı */
+  z-index: 11; /* Görselleri daha da üste taşı */
+}
+
+.weather-forecast h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+}
+
+.weather-forecast p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.forecast-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.forecast-day, .forecast-night {
+  text-align: center;
+}
+
+.forecast-day img, .forecast-night img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.6);;
+}
+
+/* Ek Bilgiler Başlığını Merkeze Hizala */
+.additional-info h3.centered {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #f39c12;
+  margin-bottom: 15px;
+}
+
+/* Ek Bilgiler Arka Planını Hava Durumu Görünümüyle Değiştir */
+.additional-info {
+  margin-top: 20px;
+  text-align: left;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-image: url('weather-background.jpg'); /* Hava durumu arka planı */
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
   </style>
 </head>
 <body style="background-image: url('Background2.png');" id="body">
@@ -788,12 +888,45 @@
     <button onclick="bolumGoster('mutfak')">🍲 Azerbaycan Mutfağı</button>
     <button onclick="bolumGoster('inciler')">💎 Azerbaycan'ın İncileri</button>
     <button onclick="bolumGoster('eskisimdi')">⏳ Ebedî Şahsiyetler</button>
-    <button onclick="bolumGoster('iletisim')">📧 İletişim</button>
   </div>
 
   <div class="icerik" id="icerik">
     <h2>Hoş Geldiniz</h2>
-    <p>Lütfen sol üst köşedeki menüden bir bölüm seçin.</p>
+    <div class="weather-forecast">
+      <h2>📅 Bakü Hava Durumu</h2>
+      <p id="headline-text">-</p>
+      <div class="forecast-details">
+        <div class="forecast-day">
+          <h3>Bugün</h3>
+          <img id="day-icon" src="" alt="Gündüz Hava Durumu İkonu">
+          <p id="day-text">Durum: -</p>
+          <p id="day-temp">Sıcaklık: -</p>
+          <p id="day-wind">Rüzgar: -</p>
+          <p id="day-humidity">Nem: -</p>
+          <p id="day-uv">UV İndeksi: -</p>
+        </div>
+        <div class="forecast-night">
+          <h3>Bu Gece</h3>
+          <img id="night-icon" src="" alt="Gece Hava Durumu İkonu">
+          <p id="night-text">Durum: -</p>
+          <p id="night-temp">Sıcaklık: -</p>
+          <p id="night-wind">Rüzgar: -</p>
+          <p id="night-humidity">Nem: -</p>
+        </div>
+      </div>
+      <div class="additional-info">
+        <h3 class="centered">Ek Bilgiler</h3>
+        <p id="sunrise">Gün Doğumu: -</p>
+        <p id="sunset">Gün Batımı: -</p>
+        <p id="air-quality">Hava Kalitesi: -</p>
+      </div>
+    </div>
+    <div class="centered-slider">
+      <img src="bustan.jpg" alt="Gobustan Milli Parkı" class="slider-image">
+      <img src="flame_towers.jpg" alt="Flame Towers" class="slider-image">
+      <img src="sheki_palace.jpg" alt="Şeki Han Sarayı" class="slider-image">
+      <img src="nizami_street.jpg" alt="Nizami Caddesi" class="slider-image">
+    </div>
   </div>
 
 
@@ -988,7 +1121,7 @@
     <div class="profil-section">
       <img src="profil.jpg" alt="Profil Fotoğrafı" class="profil-foto">
       <p class="profil-text">
-        Merhaba! Ben Aydın Khamedov, bu web sitesinin yaratıcısıyım. Azerbaycan'ın kültürel ve doğal güzelliklerini tanıtmak için bu projeyi geliştirdim. Yazılım geliştirme, tasarım ve içerik oluşturma konularında tutkuluyum.
+        Merhaba! Ben Aydın Khamedov, bu web sitesinin yaratıcısıyım. Azerbaycan'ın kültürel ve doğal güzelliklerini tanıtmak için bu projeyi geliştirdim. Sitenin amacı sizi Azerbaycan'ın tarihi ve manevi kültürüyle tanıştırmaktır.
       </p>
     </div>
     <div class="hakkimda-extra">
@@ -999,6 +1132,8 @@
         <li>💻 Yazılım Geliştirme</li>
         <li>🎨 Grafik Tasarım</li>
         <li>🎶 Müzik Dinleme</li>
+        <li>♟️ Satranç</li>
+        <li>⚽ Futbol</li>
       </ul>
     </div>
     <div class="hakkimda-gallery">
@@ -1032,7 +1167,7 @@
       <a href="https://www.linkedin.com/in/ayd%C4%B1n-khamedov-41701a2b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a>
       <a href="https://github.com/Khamedof" target="_blank">GitHub</a>
       <a href="https://www.instagram.com/khamedoff.07?igsh=MXE4cmJvenBrYW5xcQ%3D%3D&utm_source=qr" target="_blank">Instagram</a>
-      <a href="https://www.twitter.com" target="_blank">Twitter</a>
+      <a href="mailto:ajdinchamedof@gmail.com">Gmail</a>
     </div>
   </div>
 </div>
@@ -1300,13 +1435,7 @@
     </div>
 
     
-     <div class="card" >
-      <div class="avatar">
-        <img src="QabilMəmmədov.jpg" alt="Qabil Məmmədov" />
-      </div>
-      <div class="name">Qabil Məmmədov</div>
-      <div class="description">Harici siyaset alanında etkin rol oynayan, cesur ve saygı gören bir devlet adamıdır.</div>
-    </div>
+    
 
     <div class="card">
       <div class="avatar">
@@ -1393,7 +1522,7 @@
      </video>
     </div>
     <h2>Modern Azerbaycan: Geçmişin Mirası, Geleceğin Vizyonu</h2>
-        <p>
+        <p class="mutfak-animasyon>
           Azerbaycan, tarih boyunca birçok medeniyete ev sahipliği yapmış, zengin kültürel
            mirasıyla ön plana çıkan bir ülkedir. Ancak bu köklü geçmiş, onu sadece tarihle 
            sınırlı bir ülke yapmaz. Bugünün Azerbaycan’ı; modern şehircilik anlayışı,
@@ -1616,12 +1745,7 @@ Hem gündüz hem de akşam saatlerinde ziyaretçilerine huzur veren Little Venic
 
       
       break;
-        case "iletisim":
-          baslikText = "📧 İletişim";
-          arkaPlan = "Background2.png";
-          icerikHTML = `<h2>İletişim</h2>
-                        <p>Bana ulaşmak için e-posta gönderin veya sosyal medya hesaplarımı ziyaret edin.</p>`;
-          break;
+       
         default:
           baslikText = "Azerbaycan Tanıtım Sitesi";
           icerikHTML =
@@ -1634,8 +1758,99 @@ Hem gündüz hem de akşam saatlerinde ziyaretçilerine huzur veren Little Venic
       document.getElementById("menu").classList.remove("open");
     }
 
+    const images = document.querySelectorAll('.slider-image');
+let currentIndex = 0;
 
-  
+function showNextImage() {
+  // Mevcut görseli gizle
+  images[currentIndex].classList.remove('active');
+
+  // Bir sonraki görsele geç
+  currentIndex = (currentIndex + 1) % images.length;
+
+  // Yeni görseli göster
+  images[currentIndex].classList.add('active');
+}
+
+// İlk görseli göster
+images[currentIndex].classList.add('active');
+
+// Her 5 saniyede bir görsel değiştir
+setInterval(showNextImage, 5000);
+
+// JSON verisi
+const weatherData = {
+  Headline: {
+    Text: "Pazar akşamı çok rüzgarlı",
+  },
+  DailyForecasts: [
+    {
+      Date: "2025-05-25T07:00:00+04:00",
+      Temperature: {
+        Minimum: { Value: 17.5, Unit: "C" },
+        Maximum: { Value: 23.6, Unit: "C" },
+      },
+      Day: {
+        Icon: 32,
+        IconPhrase: "Rüzgarlı",
+        Wind: {
+          Speed: { Value: 33.3, Unit: "km/h" },
+        },
+        UVIndex: 10,
+      },
+      Night: {
+        Icon: 32,
+        IconPhrase: "Rüzgarlı",
+        Wind: {
+          Speed: { Value: 31.5, Unit: "km/h" },
+        },
+      },
+      Sun: {
+        Rise: "2025-05-25T05:17:00+04:00",
+        Set: "2025-05-25T19:58:00+04:00",
+      },
+      AirAndPollen: [
+        {
+          Name: "AirQuality",
+          Category: "İyi",
+        },
+      ],
+    },
+  ],
+};
+
+// Hava durumu bilgilerini güncelle
+function updateWeather() {
+  const headline = weatherData.Headline.Text;
+  const forecast = weatherData.DailyForecasts[0];
+
+  // Başlık
+  document.getElementById("headline-text").textContent = headline;
+
+  // Gündüz bilgileri
+  document.getElementById("day-icon").src = `https://developer.accuweather.com/sites/default/files/${forecast.Day.Icon}-s.png`;
+  document.getElementById("day-text").textContent = `Durum: ${forecast.Day.IconPhrase}`;
+  document.getElementById("day-temp").textContent = `Sıcaklık: ${forecast.Temperature.Minimum.Value}°C - ${forecast.Temperature.Maximum.Value}°C`;
+  document.getElementById("day-wind").textContent = `Rüzgar: ${forecast.Day.Wind.Speed.Value} ${forecast.Day.Wind.Speed.Unit}`;
+  document.getElementById("day-humidity").textContent = `Nem: %50`; // JSON'da nem bilgisi yok, sabit bir değer ekledik.
+  document.getElementById("day-uv").textContent = `UV İndeksi: ${forecast.Day.UVIndex}`;
+
+  // Gece bilgileri
+  document.getElementById("night-icon").src = `https://developer.accuweather.com/sites/default/files/${forecast.Night.Icon}-s.png`;
+  document.getElementById("night-text").textContent = `Durum: ${forecast.Night.IconPhrase}`;
+  document.getElementById("night-temp").textContent = `Sıcaklık: ${forecast.Temperature.Minimum.Value}°C - ${forecast.Temperature.Maximum.Value}°C`;
+  document.getElementById("night-wind").textContent = `Rüzgar: ${forecast.Night.Wind.Speed.Value} ${forecast.Night.Wind.Speed.Unit}`;
+  document.getElementById("night-humidity").textContent = `Nem: %50`; // JSON'da nem bilgisi yok, sabit bir değer ekledik.
+
+  // Ek bilgiler
+  document.getElementById("sunrise").textContent = `Gün Doğumu: ${forecast.Sun.Rise}`;
+  document.getElementById("sunset").textContent = `Gün Batımı: ${forecast.Sun.Set}`;
+  document.getElementById("air-quality").textContent = `Hava Kalitesi: ${forecast.AirAndPollen[0].Category}`;
+}
+
+// Sayfa yüklendiğinde hava durumu bilgilerini güncelle
+updateWeather();
+
   </script>
 </body>
 </html>

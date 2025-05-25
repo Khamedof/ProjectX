@@ -16,6 +16,7 @@
       background-repeat: no-repeat;
       font-family: Arial, sans-serif;
       color: white;
+      overflow: hidden;
     }
 
     h1 {
@@ -23,6 +24,7 @@
       margin-top: 30px;
       font-size: 55px;
       z-index: 2;
+      animation: fadeIn 2s ease-in-out; /* Başlık için fade-in animasyonu */
     }
 
     .icerik-kutu {
@@ -32,6 +34,7 @@
       max-width: 900px;
       margin: 40px auto;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      animation: slideIn 1.5s ease-out; /* Kutunun kayarak gelmesi */
     }
 
     .icerik-kutu h2 {
@@ -39,29 +42,76 @@
       line-height: 1.6;
       text-align: center;
       color: #f1f1f1;
+      animation: textGlow 3s infinite alternate; /* Metin için parlayan efekt */
     }
 
-    .alt-buton {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
+    .giris-formu {
+      margin-top: 20px;
+      text-align: center;
     }
 
-    .alt-buton button {
-      padding: 12px 24px;
-      font-size: 18px;
+    .giris-formu input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
       border: none;
-      border-radius: 8px;
-      background-color: #ffffffcc;
-      color: #000;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .giris-formu button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f39c12;
+      color: white;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background-color 0.3s;
     }
 
-    .alt-buton button:hover {
-      background-color: #ddd;
+    .giris-formu button:hover {
+      background-color: #e67e22;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .alt-buton {
+      display: none; /* Alt butonu gizliyoruz, çünkü giriş formu ekledik */
+    }
+
+    /* Animasyonlar */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes textGlow {
+      from {
+        text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12;
+      }
+      to {
+        text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00;
+      }
     }
   </style>
 </head>
@@ -79,19 +129,36 @@
       mirasın dünya ile paylaşılmasına katkıda bulunmaktır.
       <br>Sizleri, bu bilgi ve kültür yolculuğunda keyifli ve verimli bir deneyim yaşamaya davet ediyorum.
     </h2>
-  </div>
 
-  <!-- Alt ortadaki buton -->
-  <div class="alt-buton">
-    <button onclick="yeniSekmeAc()">Devam Et</button>
+    <!-- Giriş Formu -->
+    <div class="giris-formu">
+      <input type="text" id="email" placeholder="E-posta adresinizi girin">
+      <input type="password" id="password" placeholder="Parolanızı girin">
+      <button onclick="girisKontrol()">Devam Et</button>
+      <p class="error-message" id="error-message"></p>
+    </div>
   </div>
 
   <script>
-    function yeniSekmeAc() {
-      window.open("devam.html", "_blank");
+    function girisKontrol() {
+      // Kullanıcıdan alınan bilgileri al
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Doğru bilgiler
+      const dogruEmail = "aydin.khamedov@ogr.sakarya.edu.tr";
+      const dogruPassword = "b241210556";
+
+      // Bilgileri kontrol et
+      if (email === dogruEmail && password === dogruPassword) {
+        // Bilgiler doğruysa devam.html dosyasını aç
+        window.open("devam.html", "_blank");
+      } else {
+        // Bilgiler yanlışsa hata mesajı göster
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.textContent = "Hesap veya şifre hatalı!";
+      }
     }
   </script>
-  
-  <script src="js/core.js"></script>
 </body>
 </html>
